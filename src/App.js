@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <p>Job Application Tracker</p>
+      <main>Job Application Tracker</main>
       <Footer/>
     </div>
   );
