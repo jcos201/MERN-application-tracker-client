@@ -43,7 +43,7 @@ function App(props) {
           } />
           <Route exact path="/dashboard" render={props =>
             userState.user ? 
-            <DashboardPage />
+            <DashboardPage user={userState.user} />
             :
             <Redirect to ="/login" />
           } />

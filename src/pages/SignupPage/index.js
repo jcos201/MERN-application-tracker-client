@@ -66,7 +66,7 @@ function SignupPage (props) {
 
             </form>
         </div>
-    )
+    );
 
 }
 
