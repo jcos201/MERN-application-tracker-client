@@ -22,8 +22,13 @@ function SignupPage (props) {
     async function handleSubmit (event) {
         try {
             event.preventDefault();
+
             await signup(formState);
+
             setFormState(getInitialFormState);
+            //todo: comment out to see that user doesn't get added to state without
+            props.handleSignupOrLogin();
+
             props.history.push('/dashboard');
 
         } catch (error) {
