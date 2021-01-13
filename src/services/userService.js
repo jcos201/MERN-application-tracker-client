@@ -1,9 +1,10 @@
 const BASE_URL = 'http://localhost:3001/users'
 
-function signup () {
+function signup (user) {
+    console.log(JSON.stringify(user))
     return fetch(BASE_URL + '/signup', {
         method: 'POST',
-        header: {
+        headers: {
             'Content-Type': 'Application/json'
         },
         body: JSON.stringify(user)

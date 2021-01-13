@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { signup } from '../../services/userService';
 
 function SignupPage (props) {
     const [formState, setFormState] = useState(getInitialFormState);
@@ -18,12 +19,18 @@ function SignupPage (props) {
         }))
     }
 
-    function handleSubmit (event) {
-        event.preventDefault();
-        console.log('submitted form data', formState)
+    async function handleSubmit (event) {
+        try {
+            event.preventDefault();
+            await signup(formState);
+            setFormState(getInitialFormState);
+            props.history.push('/dashboard');
+
+        } catch (error) {
+            alert(error.message);
+        }
+        //console.log('submitted form data', formState)
         //TODO: make ajax request to signup user
-        setFormState(getInitialFormState);
-        props.history.push('/dashboard');
     }
     return(
         <div className="Page">
