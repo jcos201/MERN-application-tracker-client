@@ -9,6 +9,7 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import ApplicationsPage from './pages/DashboardPage/Applications';
+import AddApplication from './pages/DashboardPage/Applications/AddApplication'
 import JobSearchPage from './pages/DashboardPage/JobSearch';
 
 
@@ -69,6 +70,11 @@ function App(props) {
           } />
           <Route exact path="/jobsearch" render={props =>
             <JobSearchPage
+            {...props}
+            user={userState.user}  /> 
+          } />
+          <Route exact path="/addapplication" render={props =>
+            <AddApplication
             {...props}
             user={userState.user}  /> 
           } />
