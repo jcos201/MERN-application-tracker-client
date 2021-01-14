@@ -1,7 +1,7 @@
-function JobSearch(props){
+function JobSearchPage(props){
     return (
-        <div>Job Search</div>
+        <div>{props.user.firstName}'s Job Search Page</div>
     )
 }
 
-export default JobSearch;
+export default JobSearchPage;

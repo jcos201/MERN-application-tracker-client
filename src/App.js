@@ -8,6 +8,9 @@ import HomePage from './pages/HomePage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
+import ApplicationsPage from './pages/DashboardPage/Applications';
+import JobSearchPage from './pages/DashboardPage/JobSearch';
+
 
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import './App.css';
@@ -58,6 +61,16 @@ function App(props) {
             {...props} 
             handleSignupOrLogin={handleSignupOrLogin}
             />
+          } />
+          <Route exact path="/applications" render={props =>
+            <ApplicationsPage 
+            {...props}
+            user={userState.user}  /> 
+          } />
+          <Route exact path="/jobsearch" render={props =>
+            <JobSearchPage
+            {...props}
+            user={userState.user}  /> 
           } />
         </Switch></main>
       <Footer/>

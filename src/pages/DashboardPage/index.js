@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom'
 
-import Applications from './Applications'
-import JobSearch from './JobSearch'
 
 
 function DashboardPage (props) {
     return(
         <div>
-            {props.user._id}'s Dashboard Page
-            <Applications />
-            <JobSearch />
+            {props.user.firstName}'s Dashboard Page
+            {props.user._id}
+            <Link to="/applications"><button>Applications</button></Link>
+            <Link to="/jobsearch"><button>My Job Search</button></Link>
         </div>
     )
 
