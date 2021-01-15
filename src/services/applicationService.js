@@ -1,15 +1,19 @@
 const BASE_URL = 'http://localhost:3001/users';
 
-function showApplications (user) {
-    return fetch(BASE_URL + '/my-applications', {
-        method: 'GET',
+function addListing (applicationInfo) {
+    return fetch(BASE_URL + '/addapplication', {
+        method: 'POST',
         headers: {
             'Content-Type': 'Application/json'
         },
-        body: JSON.stringify(user)
-    })
+        body: JSON.stringify(applicationInfo)
+    }).then( response => {
+        if(response.ok) return response.json();
+        throw new Error ('Bad Application Data');
+    }).then (data => console.log(data))
 }
 
+
 export {
-    showApplications,
+    addListing,
 }

@@ -35,7 +35,14 @@ function getUser() {
     return getUserFromToken();
 }
 
-
+/*
+TODO: Update user with latest applications/job searches
+function updateUserState() {
+    setUserState({
+      user: getUser(),
+    })
+  };
+*/ 
 export {
     signup,
     login,
