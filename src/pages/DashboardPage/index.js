@@ -6,7 +6,8 @@ function DashboardPage (props) {
     return(
         <div>
             {props.user.firstName}'s Dashboard Page
-            {props.user._id}
+            <br/>{props.user._id}
+            <br/>{props.user.applications.length}<br/>
             <Link to="/applications"><button>Applications</button></Link>
             <Link to="/jobsearch"><button>My Job Search</button></Link>
         </div>
