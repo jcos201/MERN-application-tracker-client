@@ -9,7 +9,7 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import ApplicationsPage from './pages/DashboardPage/Applications';
-import AddApplication from './pages/DashboardPage/Applications/AddApplication'
+import AddApplication from './pages/DashboardPage/Applications/AddApplication';
 import JobSearchPage from './pages/DashboardPage/JobSearch';
 
 
