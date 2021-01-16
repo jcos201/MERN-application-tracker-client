@@ -35,17 +35,20 @@ function getUser() {
     return getUserFromToken();
 }
 
-/*
-TODO: Update user with latest applications/job searches
-function updateUserState() {
-    setUserState({
-      user: getUser(),
-    })
-  };
-*/ 
+function updateUserApplications(applicationsArray) {
+    let user = getUser();
+    console.log('before call:')
+    console.log(getUser().applications);
+    user.applications = applicationsArray;
+    console.log('after call')
+    console.log(getUser().applications);
+}
+
+
 export {
     signup,
     login,
     logout,
     getUser,
+    updateUserApplications
 }
