@@ -9,7 +9,6 @@ function AddApplication (props) {
     function getInitialFormState() {
         return {
         token: getToken(),
-        user: getUser(),
         companyName: "",
         jobTitle: "",
         dateApplied: "",
@@ -33,7 +32,7 @@ function AddApplication (props) {
 
             console.log(getUser())
 
-            props.history.push('/dashboard');
+            props.history.push('/applications');
             
         } catch (error) {
             
