@@ -30,7 +30,7 @@ function AddApplication (props) {
 
             await addListing(formState);
 
-            console.log(getUser())
+           // console.log(getUser())
 
             props.history.push('/applications');
             
