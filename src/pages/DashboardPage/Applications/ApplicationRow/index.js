@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function ApplicationRow (props, idx) {
+function ApplicationRow (props) {
     return (        
             <tr>
             <th>{props.companyName}</th>
@@ -9,7 +9,7 @@ function ApplicationRow (props, idx) {
             <th>{props.interviewDate}</th>
             <th>{props.contactName}</th>
             <th>{props.notes}</th>
-            <td><Link to={"/edit/"+props._id}><button>Edit</button></Link></td>
+            <td><Link to={"/edit/"+props.appId}><button>Edit</button></Link></td>
             <td><Link><button>Delete</button></Link></td>
             </tr>)
 };
