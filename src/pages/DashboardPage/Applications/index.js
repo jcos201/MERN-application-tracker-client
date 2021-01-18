@@ -20,7 +20,7 @@ function ApplicationsPage (props) {
                 'Content-Type': 'Application/json',
                 'Authorization': 'Bearer ' + getToken() },
         }
-        fetch(BASE_URL + '/applications/' + userId, requestOptions)
+        fetch(BASE_URL + '/applications', requestOptions)
             .then(response => response.json())
             .then(data => setApplicationsState(data.applicationArray))
 
@@ -49,16 +49,16 @@ function ApplicationsPage (props) {
             <th></th>
             </tr>
         {applicationsState.map((listing, idx) => {
-            return (<tr>
-            <td>{listing.companyName}</td>
-            <td>{listing.jobTitle}</td>
-            <td>{listing.dateApplied}</td>
-            <td>{listing.interviewDate}</td>
-            <td>{listing.contactName}</td>
-            <td>{listing.notes}</td>
-            <td><button>Edit</button></td>
-            <td><button>Delete</button></td>
-            </tr>)
+            return (<ApplicationRow 
+                companyName={listing.companyName}
+                jobTitle={listing.jobTitle}
+                dateApplied={listing.dateApplied}
+                interviewDate={listing.interviewDate}
+                contactName={listing.contactName}
+                notes={listing.notes}
+                appId={listing._id}
+                key={idx}
+                />)
         })}
         
         </table>
