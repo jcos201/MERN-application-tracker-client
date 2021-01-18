@@ -8,12 +8,15 @@ import HomePage from './pages/HomePage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
+
 import ApplicationsPage from './pages/DashboardPage/Applications';
 import AddApplication from './pages/DashboardPage/Applications/AddApplication';
+import EditApplication from './pages/DashboardPage/Applications/EditApplication';
+
 import JobSearchPage from './pages/DashboardPage/JobSearch';
 
 
-import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+import { Switch, Route, withRouter, Redirect, useParams } from 'react-router-dom';
 import './App.css';
 
 
@@ -37,6 +40,7 @@ function App(props) {
     
     props.history.push('/');
   }
+
 
   return (
     <div className="App">
@@ -77,6 +81,12 @@ function App(props) {
             <AddApplication
             {...props}
             user={userState.user}  /> 
+          } />
+          <Route exact path="/edit/:id" render={props =>
+            <EditApplication
+            {...props}
+            user={userState.user}
+              /> 
           } />
         </Switch></main>
       <Footer/>
