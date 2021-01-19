@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { getUser } from '../../../../services/userService'
 import { addListing } from '../../../../services/applicationService'
 import { getToken } from '../../../../services/tokenService'
 
@@ -30,12 +29,10 @@ function AddApplication (props) {
 
             await addListing(formState);
 
-           // console.log(getUser())
-
             props.history.push('/applications');
             
         } catch (error) {
-            
+            alert(error.message)
         }
     }
 

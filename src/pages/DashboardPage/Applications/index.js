@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { getUser } from '../../../services/userService'
 import { getToken } from '../../../services/tokenService'
 
 import ApplicationRow from './ApplicationRow'
@@ -10,11 +9,7 @@ const BASE_URL = 'http://localhost:3001/users';
 function ApplicationsPage (props) {
     const [applicationsState, setApplicationsState] = useState([]);
 
-    //console.log(props.user)
-
-
     useEffect(() => {
-        const userId = getUser()._id;
         const requestOptions = {
             headers: { 
                 'Content-Type': 'Application/json',
@@ -23,9 +18,6 @@ function ApplicationsPage (props) {
         fetch(BASE_URL + '/applications', requestOptions)
             .then(response => response.json())
             .then(data => setApplicationsState(data.applicationArray))
-
-      //      console.log(applicationsState.applicationArray.length);
-
         
     }, [])    
 

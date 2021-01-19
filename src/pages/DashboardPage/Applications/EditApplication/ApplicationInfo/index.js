@@ -1,14 +1,15 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+
+import { updateListing } from '../../../../../services/applicationService';
 
 import { getToken } from '../../../../../services/tokenService';
 
 function ApplicationInfo(props) {
+    let { id } = useParams();
     const listingData = props.preloadedData;
     console.log('listing data')
     console.log(listingData)
-
-
 
     const [formState, setFormState] = useState(getInitialFormState);
 
@@ -23,8 +24,18 @@ function ApplicationInfo(props) {
         notes: listingData.notes ? listingData.notes : "",
     }};
 
-    function handleSubmit() {
-
+    async function handleSubmit (event) {
+        try {
+            event.preventDefault();
+            console.log('from inside handleSubmit')
+            console.log(formState);
+            await updateListing(formState, id);
+            console.log('made it back to handlesubmit')
+            props.history.push('/applications');
+            
+        } catch (error) {
+            alert(error.message)
+        }
     }
 
     function handleChange (event) {

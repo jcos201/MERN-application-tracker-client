@@ -15,7 +15,6 @@ function EditApplication(props) {
     useEffect(() => {
         console.log('inside useEffect')
         
-        let formInfo =[]
         console.log('inside getInitialFormState')
         const requestOptions = {
             headers: { 
@@ -32,25 +31,7 @@ function EditApplication(props) {
         
     }, []);
     
-
-
-    async function handleSubmit (event) {
-        try {
-            //event.preventDefault();
-
-          //  await addListing(formState);
-
-         //   console.log(getUser())
-
-        //    props.history.push('/applications');
-            
-        } catch (error) {
-            
-        }
-    }
-
-    
-    return singleListingData ? <ApplicationInfo preloadedData={singleListingData}/> : <div>Loading...</div>
+    return singleListingData ? <ApplicationInfo {...props} preloadedData={singleListingData}/> : <div>Loading...</div>
 }
 
 export default EditApplication;

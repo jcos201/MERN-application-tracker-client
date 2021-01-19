@@ -26,7 +26,6 @@ function SignupPage (props) {
             await signup(formState);
 
             setFormState(getInitialFormState);
-            //todo: comment out to see that user doesn't get added to state without
             props.handleSignupOrLogin();
 
             props.history.push('/dashboard');
