@@ -1,4 +1,6 @@
 import { updateUserApplications } from './userService'
+import { getToken } from './tokenService'
+
 const BASE_URL = 'http://localhost:3001/users';
 
 function addListing (applicationInfo) {
@@ -30,8 +32,23 @@ function getListings(userId) {
         .then(data => console.log(JSON.stringify(data)));
 }
 
+function updateListing(updatedInfo, appId) {
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer " + getToken(), },
+        body: JSON.stringify(updatedInfo)
+    };
+
+    return fetch(BASE_URL + '/applications/' + appId, requestOptions )
+        .then(response => response.json)
+        .then(data => console.log(data));
+}
+
 
 export {
     addListing,
-    getListings
+    getListings,
+    updateListing,
 }
