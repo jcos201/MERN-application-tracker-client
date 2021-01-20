@@ -15,8 +15,6 @@ function addListing (applicationInfo) {
         throw new Error ('Bad Application Data');
         
     }).then (data => {
-        console.log('data coming back from express');
-        console.log(JSON.stringify(data.applicationArray));
         const applications = JSON.stringify(data.applicationArray);
         updateUserApplications(applications);
     })

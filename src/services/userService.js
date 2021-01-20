@@ -37,11 +37,14 @@ function getUser() {
 
 function updateUserApplications(applicationsArray) {
     let user = getUser();
-    console.log('before call:')
-    console.log(getUser().applications);
+
     user.applications = applicationsArray;
-    console.log('after call')
-    console.log(getUser().applications);
+}
+
+function updateUserSavedSearches(searchArray) {
+    let user = getUser();
+
+    user.applications = searchArray;
 }
 
 
@@ -50,5 +53,6 @@ export {
     login,
     logout,
     getUser,
-    updateUserApplications
+    updateUserApplications,
+    updateUserSavedSearches,
 }
