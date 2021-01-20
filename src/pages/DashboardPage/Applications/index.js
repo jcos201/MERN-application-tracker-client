@@ -28,8 +28,8 @@ function ApplicationsPage (props) {
         <Link to="/addApplication"><button>Add Application</button></Link>
         <div>{props.user.firstName}'s Job Applications Page</div>
         {applicationsState && applicationsState.length > 0 ? 
-        <tbody>
         <table>
+            <tbody>
         <tr>
             <th>Company Name</th>
             <th>Position</th>
@@ -42,6 +42,7 @@ function ApplicationsPage (props) {
             </tr>
         {applicationsState.map((listing, idx) => {
             return (<ApplicationRow 
+                {...props}
                 companyName={listing.companyName}
                 jobTitle={listing.jobTitle}
                 dateApplied={listing.dateApplied}
@@ -53,8 +54,8 @@ function ApplicationsPage (props) {
                 />)
         })}
         
-        </table>
         </tbody>        
+        </table>
             :
         <p>There are no applications here</p>}
         </>
