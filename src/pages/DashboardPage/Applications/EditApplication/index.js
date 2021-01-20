@@ -15,7 +15,6 @@ function EditApplication(props) {
     useEffect(() => {
         console.log('inside useEffect')
         
-        console.log('inside getInitialFormState')
         const requestOptions = {
             headers: { 
                 'Content-Type': 'Application/json',
