@@ -27,10 +27,10 @@ function ApplicationInfo(props) {
     async function handleSubmit (event) {
         try {
             event.preventDefault();
-            console.log('from inside handleSubmit')
-            console.log(formState);
+            //console.log('from inside handleSubmit')
+            //console.log(formState);
             await updateListing(formState, id);
-            console.log('made it back to handlesubmit')
+            //console.log('made it back to handlesubmit')
             props.history.push('/applications');
             
         } catch (error) {
