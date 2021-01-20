@@ -15,7 +15,7 @@ import EditApplication from './pages/DashboardPage/Applications/EditApplication'
 import DeleteApplication from './pages/DashboardPage/Applications/DeleteApplication'
 
 import JobSearchPage from './pages/DashboardPage/JobSearch';
-
+import SavedSearch from './pages/DashboardPage/JobSearch/SavedSearch'
 
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import './App.css';
@@ -73,11 +73,6 @@ function App(props) {
             {...props}
             user={userState.user}  /> 
           } />
-          <Route exact path="/jobsearch" render={props =>
-            <JobSearchPage
-            {...props}
-            user={userState.user}  /> 
-          } />
           <Route exact path="/addapplication" render={props =>
             <AddApplication
             {...props}
@@ -94,6 +89,16 @@ function App(props) {
             {...props}
             user={userState.user}
               />
+          } />
+          <Route exact path="/jobsearch" render={props =>
+            <JobSearchPage
+            {...props}
+            user={userState.user}  /> 
+          } />
+          <Route exact path="/search/:id" render={props =>
+            <SavedSearch
+            {...props}
+            user={userState.user}  /> 
           } />
         </Switch></main>
       <Footer/>
