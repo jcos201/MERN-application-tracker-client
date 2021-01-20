@@ -1,50 +1,65 @@
 import { useState, useEffect } from 'react';
-import { getUser } from '../../../services/userService'
-import { getToken } from '../../../services/tokenService'
 import { addSearch } from '../../../services/jobSearchServices';
+
+import { getToken } from '../../../services/tokenService'
+import SearchRow from './SearchRow'
+
+const BASE_URL = 'http://localhost:3001/users';
 
 function JobSearchPage(props){
     const [formState, setFormState] = useState(getInitialFormState);
 
+    const [jobSearchState, setJobSearchState] = useState([]);
+
     function getInitialFormState() {
         return {
-        token: getToken(),
-        user: getUser(),
         jobKeyword: "",
         city: "",
         state1: "",
     }};
+
+    useEffect(() => {
+        const requestOptions = {
+            headers: { 
+                'Content-Type': 'Application/json',
+                'Authorization': 'Bearer ' + getToken() },
+        }
+        fetch(BASE_URL + '/savedsearches', requestOptions)
+            .then(response => response.json())
+            .then(data => setJobSearchState(data.jobSearchArray));
+
+        //console.log(jobSearchState)
+        
+    }, [])
 
     function handleChange (event) {
         setFormState(prevState => ({
             ...prevState,
             [event.target.name]: event.target.value
         }))
-        if(event.target.name === 'state1') {
-            console.log('state1 was changed')
-            console.log(event.target.value)
-                }
     }
 
     async function handleSubmit (event) {
+        //console.log('formState');
+        //console.log(formState)
         try {
             event.preventDefault();
-
-            await addSearch(formState);
-
-            
+            const updatedArray = await addSearch(formState);
+            //console.log('updatedArray');
+            //console.log(updatedArray);
+            setJobSearchState(updatedArray);            
         } catch (error) {
-            
+            alert(error.message)
         }
+
+        //console.log(props.history)
     }
 
-    useEffect(() => {
-        console.log('state1 changed to');
-        console.log(formState.state1)
-       //formState.state1.value : formState.state1;
-    }, [formState.state1])
+
 
     return(
+        <>
+        <div>{props.user.firstName}'s Job Applications Page</div>
         <div className="Page">
             <form onSubmit={handleSubmit}>
                 <div>
@@ -124,6 +139,25 @@ function JobSearchPage(props){
 
             </form>
         </div>
+        {jobSearchState && jobSearchState.length > 0 ? 
+            <table>
+                <tbody>
+                <tr><th>Keyword</th><th>City</th><th>State</th><th></th></tr>
+                {jobSearchState.map((listing, idx) => {
+                return (<SearchRow
+                {...props}
+                jobKeyword={listing.jobKeyword}
+                city={listing.city}
+                state1={listing.state1}
+                searchId={listing._id}
+                key={idx}
+                />)
+        })}
+                </tbody>
+            </table>
+        : 
+        <p>Enter information for a search above and click on the save button</p>}
+        </>
     );
 }
 
