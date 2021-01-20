@@ -1,7 +1,11 @@
+import { Link } from 'react-router-dom'
+
 function DashboardPage (props) {
     return(
         <div>
-            Dashboard Page
+            {props.user.firstName}'s Dashboard Page
+            <Link to="/applications"><button>Applications</button></Link>
+            <Link to="/jobsearch"><button>My Job Search</button></Link>
         </div>
     )
 
