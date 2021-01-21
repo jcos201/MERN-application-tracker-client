@@ -1,10 +1,21 @@
-import { useState } from 'react';
-import { addListing } from '../../../../services/applicationService'
-import { getToken } from '../../../../services/tokenService'
+import { useState, useEffect } from 'react';
+import { Hint } from 'react-autocomplete-hint';
+import DatePicker from 'react-datepicker';
+
+import "react-datepicker/dist/react-datepicker.css";
+
+import { addListing } from '../../../../services/applicationService';
+import { getToken } from '../../../../services/tokenService';
+
+const BASE_URL = 'http://localhost:3001/users';
 
 function AddApplication (props) {
     const [formState, setFormState] = useState(getInitialFormState);
 
+    const [startDate, setStartDate] = useState();
+
+    const [options, setOptions] = useState([]);
+    
     function getInitialFormState() {
         return {
         token: getToken(),
@@ -21,7 +32,21 @@ function AddApplication (props) {
             ...prevState,
             [event.target.name]: event.target.value
         }))
-    }
+    };
+
+    useEffect(() => {
+        const requestOptions = {
+            headers: { 
+                'Content-Type': 'Application/json',
+                'Authorization': 'Bearer ' + getToken() },
+        }
+        fetch(BASE_URL + '/companynames', requestOptions)
+            .then(response => response.json())
+            .then(data => setOptions(data));
+
+        console.log(options)
+        
+    }, [])
 
     async function handleSubmit (event) {
         try {
@@ -40,6 +65,7 @@ function AddApplication (props) {
         <div className="Page">
             <form onSubmit={handleSubmit}>
                 <div>
+                    <Hint options={options}>
                     <input
                     name="companyName"
                     type="text"
@@ -47,6 +73,7 @@ function AddApplication (props) {
                     onChange={handleChange} 
                     required
                     />
+                    </Hint>
                     <input
                     name="jobTitle"
                     type="text"
@@ -65,6 +92,7 @@ function AddApplication (props) {
                     placeholder="Date of Interview"
                     onChange={handleChange} 
                     />
+
                     <input
                     name="contactName"
                     type="text"
@@ -77,6 +105,7 @@ function AddApplication (props) {
                     placeholder="Notes"
                     onChange={handleChange} 
                     />
+
 
                     <button>Submit</button>
                 </div>
