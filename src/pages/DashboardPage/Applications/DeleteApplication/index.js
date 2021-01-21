@@ -20,15 +20,27 @@ function DeleteApplication(props) {
         fetch(BASE_URL + '/applications/' + id, requestOptions)
             .then(response => response.json())
             .then(data => setSingleListingData(data.listing))
+        
+        }, []);
+        
+function formatDate(date, output) {
+    var week = ['Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + (d.getDate() + 1),
+        year = d.getFullYear(),
+        dayOfWeek = d.getDay();
 
-        console.log('setListingdata')
-        console.log(singleListingData);
-            //(data => setApplicationsState(data.applicationArray))
-        
-        
-        
-    }, []);
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+    
+    console.log(`dayte = ${date}`)
 
+    return output === 2 ? [week[dayOfWeek], [month, day, year].join('/')].join(' ') : [month, day, year].join('/');
+
+}
 
 
     console.log(id);
@@ -47,13 +59,15 @@ function DeleteApplication(props) {
 };
     return(
         <>
+        { !!singleListingData ? 
+        <>
         <p>Are you sure you'd like to permanently delete the following application?</p>
         <tbody>
         <table>
             <tr><th>Company Name</th><td>{singleListingData.companyName}</td></tr>
             <tr><th>Position</th><td>{singleListingData.jobTitle}</td></tr>
-            <tr><th>Date Applied</th><td>{singleListingData.dateApplied}</td></tr>
-            <tr><th>Interview Date</th><td>{singleListingData.interviewDate}</td></tr>
+            <tr><th>Date Applied</th><td>{singleListingData.dateApplied ? formatDate(singleListingData.dateApplied) : ''}</td></tr>
+            <tr><th>Interview Date</th><td>{singleListingData.interviewDate ? formatDate(singleListingData.interviewDate, 2) : ''}</td></tr>
             <tr><th>Contact Name</th><td>{singleListingData.contactName}</td></tr>
             <tr><th>Notes</th><td>{singleListingData.notes}</td></tr>
         </table>
@@ -62,6 +76,10 @@ function DeleteApplication(props) {
             <Link to={"/applications"}><button>Cancel</button></Link>
             <button onClick={handleSubmit}>Delete</button>
         </div>
+        </>
+        :
+        <p>Loading...</p>
+}
         </>
     )
 }
