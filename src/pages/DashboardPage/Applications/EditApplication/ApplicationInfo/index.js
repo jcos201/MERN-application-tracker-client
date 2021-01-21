@@ -13,14 +13,49 @@ function ApplicationInfo(props) {
     const [formState, setFormState] = useState(getInitialFormState);
 
     function getInitialFormState() {
+        if(listingData.dateApplied) {console.log(listingData.dateApplied)}
+
+        let interviewDate = ''
+        let dateApplied = ''
+
+        if(listingData.interviewDate)  {
+            interviewDate += `${formatDate(listingData.interviewDate)}`;
+            console.log(interviewDate)
+        
+        }
+        
+        if(listingData.dateApplied)  {
+            dateApplied += `${formatDate(listingData.dateApplied)}`;
+            console.log(dateApplied)
+        }
+
         return {
         companyName: listingData.companyName ? listingData.companyName : "",
         jobTitle: listingData.jobTitle ? listingData.jobTitle : "",
-        dateApplied: listingData.dateApplied ? listingData.dateApplied : "",
-        interviewDate: listingData.interviewDate ? listingData.interviewDate : "",
+        dateApplied: listingData.dateApplied ? dateApplied : "",
+        interviewDate: listingData.jobTitle ? interviewDate : "",
         contactName: listingData.contactName? listingData.contactName : "",
         notes: listingData.notes ? listingData.notes : "",
     }};
+
+    function formatDate(date, output) {
+        var week = ['Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + (d.getDate() + 1),
+            year = d.getFullYear(),
+            dayOfWeek = d.getDay();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+        
+        console.log(`dayte = ${date}`)
+    
+        return output === 2 ? [week[dayOfWeek], [year, month, day].join('-')].join(' ') : [year, month, day].join('-');
+
+    }
 
     async function handleSubmit (event) {
         try {
