@@ -19,11 +19,6 @@ function addSearch (searchInfo) {
     
 }
 
-function displaySavedSearches() {
-
-}
-
 export {
-    addSearch,
-    displaySavedSearches,
+    addSearch
 }

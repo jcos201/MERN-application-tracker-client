@@ -100,6 +100,7 @@ function App(props) {
             {...props}
             user={userState.user}  /> 
           } />
+
         </Switch></main>
       <Footer/>
     </div>

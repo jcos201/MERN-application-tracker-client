@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 import { updateListing } from '../../../../../services/applicationService';
 
-import { getToken } from '../../../../../services/tokenService';
 
 function ApplicationInfo(props) {
     let { id } = useParams();
@@ -15,7 +14,6 @@ function ApplicationInfo(props) {
 
     function getInitialFormState() {
         return {
-        token: getToken(),
         companyName: listingData.companyName ? listingData.companyName : "",
         jobTitle: listingData.jobTitle ? listingData.jobTitle : "",
         dateApplied: listingData.dateApplied ? listingData.dateApplied : "",
