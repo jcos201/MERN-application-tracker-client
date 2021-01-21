@@ -40,22 +40,29 @@ function JobSearchPage(props){
     }
 
     async function handleSubmit (event) {
-        //console.log('formState');
-        //console.log(formState)
         try {
             event.preventDefault();
             const updatedArray = await addSearch(formState);
-            //console.log('updatedArray');
-            //console.log(updatedArray);
+
             setJobSearchState(updatedArray);            
         } catch (error) {
             alert(error.message)
         }
-
-        //console.log(props.history)
     }
 
+    async function handleDelete (searchId) {
+        //console.log('delete requested')
 
+        const requestOptions = {
+            method: "DELETE",
+            headers: {
+                'Authorization':  'Bearer ' + getToken() }
+        };
+        fetch(BASE_URL + '/deletesearch/' + searchId, requestOptions)
+            .then(response => response.json())
+            .then(data => setJobSearchState(data.jobSearchArray));
+        
+}
 
     return(
         <>
@@ -142,16 +149,19 @@ function JobSearchPage(props){
         {jobSearchState && jobSearchState.length > 0 ? 
             <table>
                 <tbody>
-                <tr><th>Keyword</th><th>City</th><th>State</th><th></th></tr>
+                <tr><th>Keyword</th><th>City</th><th>State</th><th></th><th></th></tr>
                 {jobSearchState.map((listing, idx) => {
-                return (<SearchRow
+                return (
+                <SearchRow
                 {...props}
                 jobKeyword={listing.jobKeyword}
                 city={listing.city}
                 state1={listing.state1}
                 searchId={listing._id}
                 key={idx}
-                />)
+                handleDelete={handleDelete}
+                />
+                )
         })}
                 </tbody>
             </table>
