@@ -46,7 +46,8 @@ function LoginPage (props) {
                     onChange={handleChange}
                     placeholder="Email" 
                     name="email" 
-                    type="email" />
+                    type="email"
+                    required />
                 </div>
                 <div>
                     <input 
@@ -54,7 +55,8 @@ function LoginPage (props) {
                     onChange={handleChange} 
                     placeholder="Password"
                     name="password" 
-                    type="password" />
+                    type="password"
+                    required />
                     <br/>
                 </div>
                 <div>
