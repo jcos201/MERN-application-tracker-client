@@ -1,0 +1,21 @@
+form {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5% 15%;
+    margin: 25%;
+    border: 2px;
+    border-color: gray;
+}
+
+form > div {
+    padding: 5px;
+}
+
+.formDiv {
+    margin: 25%;
+    padding: 2% 2%;
+    border-radius: 5px;
+    border-color: #BC986A;
+}

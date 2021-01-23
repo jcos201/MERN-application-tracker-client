@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { login } from '../../services/userService'
+import styles from './Login.module.css'
+
+
 
 function LoginPage (props) {
     const [formState, setFormState] = useState(getInitialFormState);
@@ -35,26 +38,31 @@ function LoginPage (props) {
         //TODO: make ajax request to signup user
     }
     return(
-        <>
+        <div>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div class="input-field col s6">
                     <input 
                     value={formState.email} 
                     onChange={handleChange}
                     placeholder="Email" 
                     name="email" 
                     type="email" />
+                </div>
+                <div>
                     <input 
                     value={formState.password} 
                     onChange={handleChange} 
                     placeholder="Password"
                     name="password" 
                     type="password" />
+                    <br/>
+                </div>
+                <div>
                     <button>Login</button>
                 </div>
 
             </form>
-        </>
+        </div>
     );
 
 }
