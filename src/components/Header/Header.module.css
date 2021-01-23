@@ -1,21 +1,11 @@
 .Header {
     padding: 0 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    background-color: black;
+    background-color: #659DBD;
+    color: white;
     box-shadow: 3px 3px 5px lightgray;
-}
-
-.Header > nav > ul {
-    display: flex;
-    list-style: none;
-
-}
-
-.Header > nav > ul li {
-    font-size: 25px;
-    margin-right: 20px;
 }
 
 .Header a {

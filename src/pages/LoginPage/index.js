@@ -35,24 +35,26 @@ function LoginPage (props) {
         //TODO: make ajax request to signup user
     }
     return(
-        <div className="Page">
+        <>
             <form onSubmit={handleSubmit}>
                 <div>
                     <input 
                     value={formState.email} 
-                    onChange={handleChange} 
+                    onChange={handleChange}
+                    placeholder="Email" 
                     name="email" 
                     type="email" />
                     <input 
                     value={formState.password} 
                     onChange={handleChange} 
+                    placeholder="Password"
                     name="password" 
                     type="password" />
                     <button>Login</button>
                 </div>
 
             </form>
-        </div>
+        </>
     );
 
 }

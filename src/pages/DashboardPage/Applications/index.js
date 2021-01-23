@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { getToken } from '../../../services/tokenService'
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { DatePicker } from 'react-datepicker';
 
-import ApplicationRow from './ApplicationRow'
+import { getToken } from '../../../services/tokenService';
+
+import ApplicationRow from './ApplicationRow';
 
 const BASE_URL = 'http://localhost:3001/users';
 
@@ -17,8 +19,7 @@ function ApplicationsPage (props) {
         }
         fetch(BASE_URL + '/applications', requestOptions)
             .then(response => response.json())
-            .then(data => setApplicationsState(data.applicationArray))
-        
+            .then(data => setApplicationsState(data.applicationArray))        
     }, [])    
 
 
@@ -39,8 +40,10 @@ function ApplicationsPage (props) {
             <th>Notes</th>
             <th></th>
             <th></th>
+
             </tr>
         {applicationsState.map((listing, idx) => {
+            console.log(listing.dateApplied)
             return (<ApplicationRow 
                 {...props}
                 companyName={listing.companyName}

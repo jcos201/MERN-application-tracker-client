@@ -1,9 +1,61 @@
-.App {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;  
+header.dark-mode {
+    --primary-color: #C5C6C7;
+    --header-bg-color: #0B0C10;
+    --primary-bg-color: #1F2833;
+    --nav-color: #45A29E;
+    --border-color: #66FCF1;
 }
 
-.App main {
-  flex-grow: 1;
+header.light-mode {
+  --primary-color: #C5C6C7;
+  --header-bg-color: #659DBD;
+  --primary-bg-color: #FBEEC1;
+  --nav-color: #BC986A;
+  --border-color: #66FCF1;
 }
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App > footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+}
+
+/*
+main {
+  min-height: 100vh;
+  padding: 15px;
+}
+display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 4fr;
+    grid-gap: 15px;
+
+.App {
+  min-height: 100vh;
+}
+
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/2;
+}
+*/

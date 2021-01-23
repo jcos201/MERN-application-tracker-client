@@ -66,7 +66,7 @@ function JobSearchPage(props){
 
     return(
         <>
-        <div>{props.user.firstName}'s Job Applications Page</div>
+        <div>{props.user.firstName}'s Job Search Page</div>
         <div className="Page">
             <form onSubmit={handleSubmit}>
                 <div>

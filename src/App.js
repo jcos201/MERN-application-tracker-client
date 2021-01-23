@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { getUser, logout } from './services/userService';
 
 import Header from './components/Header';
+import Navigation from'./components/Navigation';
 import Footer from './components/Footer';
 
 import HomePage from './pages/HomePage';
@@ -46,6 +47,7 @@ function App(props) {
   return (
     <div className="App">
       <Header handleLogout={handleLogout} user={userState.user} />
+      <Navigation handleLogout={handleLogout} user={userState.user} />
       <main><Switch>
           <Route exact path="/" render={props =>
             <HomePage/>

@@ -22,8 +22,6 @@ function SavedSearch(props) {
             .then(response => response.json())
             .then(data => setSearchListing(data.searchListing));
         
-        
-        
     }, []);
 
     let monKeyword = "q=";
@@ -31,28 +29,45 @@ function SavedSearch(props) {
 
     let inKeyword = "q=";
     let inCity = "&l="
+
+    let cBuildKeyword ="keywords=";
+    let cBuildCity = "&location=";
+
+    let museKeyword = "";
+    let museCity = "";
+
     if(searchListing.jobKeyword) {
-        monKeyword += searchListing.jobKeyword.replace(" ", "-");
         inKeyword += searchListing.jobKeyword.replace(" ", "+");
+        cBuildKeyword += searchListing.jobKeyword.replace(" ", "+");
+        museKeyword += "keyword=" + searchListing.jobKeyword.replace(" ", "%20");
+        monKeyword += searchListing.jobKeyword.replace(" ", "-");
      }
 
     if(searchListing.city) {
-        monCity += "&where=" + searchListing.city.replace(" ", "-");
         inCity += searchListing.city.replace(" ", "+");
+        cBuildCity += searchListing.city.replace(" ", "+");
+        museCity += "&job_location=" + searchListing.city.replace(" ", "%20");
+        monCity += "&where=" + searchListing.city.replace(" ", "-");
      }
 
     if(searchListing.state1) {
         if(monCity === "") {
-            monCity += "&where=" + searchListing.state1;
             inCity += searchListing.state1;
+            cBuildCity += searchListing.state1;
+            museCity += "&job_location=" + searchListing.state1;
+            monCity += "&where=" + searchListing.state1;
         } else {
+            inCity += "%2C+" + searchListing.state1;
+            cBuildCity += "%2C+" + searchListing.state1;
+            museCity += "%2C%20" + searchListing.state1;
             monCity += "__2C-" + searchListing.state1;
-            monCity += "%2C+" + searchListing.state1;
         }
      }
 
-     const monsterURL = "https://www.monster.com/jobs/search/?" + monKeyword + monCity;
      const indeedURL = "https://www.indeed.com/jobs?" + inKeyword + inCity;
+     const cBuilderURL = "https://www.careerbuilder.com/jobs?" + cBuildKeyword + cBuildCity;
+     const museURL = "https://www.themuse.com/search?" + museKeyword + museCity;
+     const monsterURL = "https://www.monster.com/jobs/search/?" + monKeyword + monCity;
      
     return(
         <>
@@ -71,6 +86,8 @@ function SavedSearch(props) {
         </table>
         <a href={monsterURL} target="_blank" rel="noreferrer"><button>Use this search on Monster.com</button></a>
         <a href={indeedURL} target="_blank" rel="noreferrer"><button>Use this search on Indeed.com</button></a>
+        <a href={cBuilderURL} target="_blank" rel="noreferrer"><button>Use this search on CareerBuiler.com</button></a>
+        <a href={museURL} target="_blank" rel="noreferrer"><button>Use this search on Muse.com</button></a>
         </>
     )
 }
