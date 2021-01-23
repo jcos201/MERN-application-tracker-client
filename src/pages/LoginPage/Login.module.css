@@ -1,21 +1,35 @@
-form {
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5% 15%;
-    margin: 25%;
-    border: 2px;
-    border-color: gray;
-}
 
-form > div {
-    padding: 5px;
-}
+
 
 .formDiv {
-    margin: 25%;
+    margin: 10%;
     padding: 2% 2%;
-    border-radius: 5px;
+    background-color: rgba(218, 173, 134, 0.4);
+    border-style: solid;
+    border-radius: 10px;
     border-color: #BC986A;
+}
+
+
+.button {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    background-color: #659DBD;
+    text-align: center;
+    letter-spacing: .5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    transition: background-color .2s ease-out;
+}
+
+.button :hover {
+    background-color: red;
 }

@@ -1,19 +1,45 @@
+nav {
+    height: 45px !important;
+    line-height: 45px !important;
+
+}
+
 nav > ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    margin: 0;
-    padding: .5%;
-    background-color: #BC986A;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center;
+    background-color: var(--nav-color) !important;
+    margin: 0 !important;
+    list-style: none !important;
+    padding: .5% !important;
+    /*
+    height: 100%;
+
+    */
 
 }
 
 nav > ul li {
-    font-size: 25px;
     margin-right: 20px;
+    font-size: 1.5rem;
+    /*
+    height: 100%;
+    margin-bottom: 30px;
+    padding: 5%;
+    */
+}
+
+nav > ul a {
+    /*
+    font-size: 2rem !important;
+    align-self: auto;
+    */
 }
 
 a {
     text-decoration: none;
     color: white;
+    /*
+    display: inline !important;
+*/
 }

@@ -34,13 +34,11 @@ function LoginPage (props) {
         } catch (error) {
             alert(error.message);
         }
-        //console.log('submitted form data', formState)
-        //TODO: make ajax request to signup user
     }
     return(
-        <div>
+        <div className={styles.formDiv}>
             <form onSubmit={handleSubmit}>
-                <div class="input-field col s6">
+                <div >
                     <input 
                     value={formState.email} 
                     onChange={handleChange}
@@ -60,7 +58,7 @@ function LoginPage (props) {
                     <br/>
                 </div>
                 <div>
-                    <button>Login</button>
+                    <button className={styles.button}>Login</button>
                 </div>
 
             </form>

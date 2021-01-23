@@ -1,4 +1,4 @@
-header.dark-mode {
+body.dark-mode {
     --primary-color: #C5C6C7;
     --header-bg-color: #0B0C10;
     --primary-bg-color: #1F2833;
@@ -6,12 +6,12 @@ header.dark-mode {
     --border-color: #66FCF1;
 }
 
-header.light-mode {
+body {
   --primary-color: #C5C6C7;
   --header-bg-color: #659DBD;
   --primary-bg-color: #FBEEC1;
   --nav-color: #BC986A;
-  --border-color: #66FCF1;
+  --border-color: #DAAD86;
 }
 
 main{
@@ -35,6 +35,18 @@ main{
   right: 0;
   bottom: 0;
   margin: 0;
+}
+
+.switch {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.switch-sun .switch-moon {
+  font-size: 3rem;
+  color: #f6ad55;
+  cursor: pointer
 }
 
 /*

@@ -1,16 +1,55 @@
-:root {
-  --primary-color: #C5C6C7;
-  --header-bg-color: #0B0C10;
-  --primary-bg-color: #FBEEC1;
-  --nav-color: #45A29E;
-  --border-color: #66FCF1;
-}
+
 
 body{
   margin: 0;
   background-color: var(--primary-bg-color);
 }
 
+Form {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px;
+
+}
+
+Form > div {
+  padding: 5px;
+}
+
+Input {
+  min-width: 250px;
+  min-height: 30px;
+  font-size: 16px;
+  color: #BC986A;
+}
+
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 10%;
+  padding: 2% 2%;
+  background-color: rgba(218, 173, 134, 0.4);
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #BC986A;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #BC986A !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #BC986A !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #BC986A !important;
+}
 /*
 body {
   margin: 0;
@@ -29,11 +68,4 @@ code {
 }
 
 
-.Page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 */

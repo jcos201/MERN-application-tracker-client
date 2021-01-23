@@ -22,7 +22,6 @@ import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import './App.css';
 
 
-
 function App(props) {
 
   const [userState, setUserState] = useState({
@@ -46,8 +45,13 @@ function App(props) {
 
   return (
     <div className="App">
+      
       <Header handleLogout={handleLogout} user={userState.user} />
       <Navigation handleLogout={handleLogout} user={userState.user} />
+      <div class="switch">
+      <img src="https://s.svgbox.net/hero-outline.svg?ic=sun&fill=FBEEC1" class="switch-sun" width="50px" height="50px" alt="Switch to light mode"></img>
+      <img src="https://s.svgbox.net/hero-outline.svg?ic=moon&fill=1f2833" class="switch-moon" width="50px" height="50px" alt="Switch to dark mode"></img>
+      </div>
       <main><Switch>
           <Route exact path="/" render={props =>
             <HomePage/>

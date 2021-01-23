@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { signup } from '../../services/userService';
 
+import styles from './Signup.module.css'
+
 function SignupPage (props) {
     const [formState, setFormState] = useState(getInitialFormState);
 
@@ -33,36 +35,44 @@ function SignupPage (props) {
         } catch (error) {
             alert(error.message);
         }
-        //console.log('submitted form data', formState)
-        //TODO: make ajax request to signup user
+
     }
     return(
-        <div className="Page">
+        <div className="formDiv">
+            
             <form onSubmit={handleSubmit}>
-                <div>
-                    <input 
-                    value={formState.firstName} 
-                    onChange={handleChange} 
-                    name="firstName" 
-                    type="text" />
-                    <input 
-                    value={formState.lastName} 
-                    onChange={handleChange} 
-                    name="lastName" 
-                    type="text" />
-                    <input 
-                    value={formState.email} 
-                    onChange={handleChange} 
-                    name="email" 
-                    type="email" />
-                    <input 
-                    value={formState.password} 
-                    onChange={handleChange} 
-                    name="password" 
-                    type="password" />
-                    <button>Sign Up</button>
+                <div><input 
+                value={formState.firstName} 
+                onChange={handleChange} 
+                placeholder="First Name"
+                name="firstName" 
+                type="text"
+                required />
                 </div>
-
+                <div><input 
+                value={formState.lastName} 
+                onChange={handleChange} 
+                placeholder="Last Name"
+                name="lastName" 
+                type="text" />
+                </div>
+                <div><input 
+                value={formState.email} 
+                onChange={handleChange} 
+                placeholder="Email"
+                name="email" 
+                type="email"
+                required />
+                </div>
+                <div><input 
+                value={formState.password} 
+                onChange={handleChange} 
+                placeholder="Password"
+                name="password" 
+                type="password"
+                required />
+                </div>
+                <button className={styles.button}>Sign Up</button>
             </form>
         </div>
     );
