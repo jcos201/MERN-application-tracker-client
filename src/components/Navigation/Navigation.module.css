@@ -1,45 +1,35 @@
-nav {
-    height: 45px !important;
-    line-height: 45px !important;
-
+a {
+    text-decoration: none !important;
+    color: white !important;
 }
 
-nav > ul {
+.navItems {
     display: flex !important;
-    justify-content: flex-end !important;
+    align-items: flex-end !important;
+    text-align: right;
+}
+
+/*
+nav > ul {
+
     align-items: center;
     background-color: var(--nav-color) !important;
     margin: 0 !important;
     list-style: none !important;
     padding: .5% !important;
-    /*
-    height: 100%;
-
-    */
 
 }
 
 nav > ul li {
     margin-right: 20px;
     font-size: 1.5rem;
-    /*
-    height: 100%;
-    margin-bottom: 30px;
-    padding: 5%;
-    */
 }
 
 nav > ul a {
-    /*
     font-size: 2rem !important;
     align-self: auto;
-    */
+    color: white;
+    text-decoration: none !important;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    /*
-    display: inline !important;
 */
-}
