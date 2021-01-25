@@ -44,7 +44,7 @@ function SignupPage (props) {
             <Col sm={1} md={1} lg={3}></Col>
             <Col className="formDiv"  sm={3} md={6} lg={5}>
             
-            <form onSubmit={handleSubmit} className={styles.formBox}>
+            <form className={styles.formBox}>
                 <div><input 
                 value={formState.firstName} 
                 onChange={handleChange} 
@@ -76,7 +76,7 @@ function SignupPage (props) {
                 type="password"
                 required />
                 </div>
-                <Button className={styles.button}>Sign Up</Button>
+                <Button className={styles.button} onClick={handleSubmit}>Sign Up</Button>
             </form>
         </Col>
             <Col sm={1} md={1} lg={3}></Col>
