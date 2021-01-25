@@ -1,6 +1,15 @@
 .Footer {
+    position: relative;
+    bottom: 0;
+    width: 100vw;
     color:#BC986A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: small;
+    text-align: center;
+}
+
+.text {
+    position: relative;
+    margin: 0;
+    top: 10px;
+    bottom: 0;
 }
