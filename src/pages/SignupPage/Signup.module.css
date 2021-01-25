@@ -1,12 +1,42 @@
 
-.formDiv {
-    margin: 10%;
-    padding: 2% 2%;
-    background-color: rgba(218, 173, 134, 0.4);
-    border-style: solid;
-    border-radius: 10px;
-    border-color: #BC986A;
+ .formRow {
+     display: flex;
+     justify-content: center;
+ }
+
+ @media only screen and (min-width: 600px) {
+    .formBox {
+        margin: 12px 0;
+
+    }
+
+    .formDiv {
+        padding: 10px 3px !important;
+    }
+  }
+
+  .button {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    background-color: var(--header-bg-color) !important;
+    text-align: center;
+    letter-spacing: .5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    transition: background-color .2s ease-out;
+    margin-bottom: 10px;
 }
+ 
+ /*
+
+
 .button {
     text-decoration: none;
     font-size: 14px;
@@ -25,3 +55,4 @@
     vertical-align: middle;
     transition: background-color .2s ease-out;
 }
+*/

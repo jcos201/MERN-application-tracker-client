@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { signup } from '../../services/userService';
 
+import { Container, Col, Row, Button } from 'react-bootstrap'
 import styles from './Signup.module.css'
 
 function SignupPage (props) {
@@ -38,9 +39,12 @@ function SignupPage (props) {
 
     }
     return(
-        <div className="formDiv">
+        <Container>
+            <Row className={styles.formRow}>
+            <Col sm={1} md={1} lg={3}></Col>
+            <Col className="formDiv"  sm={3} md={6} lg={5}>
             
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.formBox}>
                 <div><input 
                 value={formState.firstName} 
                 onChange={handleChange} 
@@ -72,9 +76,12 @@ function SignupPage (props) {
                 type="password"
                 required />
                 </div>
-                <button className={styles.button}>Sign Up</button>
+                <Button className={styles.button}>Sign Up</Button>
             </form>
-        </div>
+        </Col>
+            <Col sm={1} md={1} lg={3}></Col>
+            </Row>
+        </Container>
     );
 
 }
