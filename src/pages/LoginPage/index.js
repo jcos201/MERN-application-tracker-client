@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { login } from '../../services/userService'
+
 import styles from './Login.module.css'
-
-
+import { Container, Col, Row, Button } from 'react-bootstrap'
 
 function LoginPage (props) {
     const [formState, setFormState] = useState(getInitialFormState);
@@ -36,9 +36,12 @@ function LoginPage (props) {
         }
     }
     return(
-        <div className={styles.formDiv}>
-            <form onSubmit={handleSubmit}>
-                <div >
+        <Container >
+            <Row className={styles.formRow}>
+            <Col sm={1} md={1} lg={3}></Col>
+            <Col className="formDiv"  sm={3} md={6} lg={5}>
+            <form>
+                <div>
                     <input 
                     value={formState.email} 
                     onChange={handleChange}
@@ -58,11 +61,14 @@ function LoginPage (props) {
                     <br/>
                 </div>
                 <div>
-                    <button className={styles.button}>Login</button>
+                    <Button className={styles.button} onClick={handleSubmit}>Login</Button>
                 </div>
 
             </form>
-        </div>
+            </Col>
+            <Col sm={1} md={1} lg={3}></Col>
+            </Row>
+        </Container>
     );
 
 }
