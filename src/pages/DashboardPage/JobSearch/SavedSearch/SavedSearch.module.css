@@ -1,0 +1,25 @@
+a {
+    padding: 7px;
+}
+
+.pageItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.thCol {
+    max-width: 40%;
+    padding: 2px;
+}
+
+.tdCol {
+    min-width: 60%;
+    padding: 2px 5px;
+}
+
+.searchCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
