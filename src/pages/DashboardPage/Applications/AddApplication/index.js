@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Hint } from 'react-autocomplete-hint';
-import DatePicker from 'react-datepicker';
 
-import "react-datepicker/dist/react-datepicker.css";
+import { Container, Button, Row, Col } from 'react-bootstrap'
+import styles from './AddApplication.module.css'
 
 import { addListing } from '../../../../services/applicationService';
 import { getToken } from '../../../../services/tokenService';
@@ -62,9 +62,10 @@ function AddApplication (props) {
     }
 
     return(
-        <div className="Page">
-            <form onSubmit={handleSubmit}>
-                <div>
+        <Container className={styles.form}>
+            <form >
+                <Row className={styles.formRow}>
+                    <Col xs={6} md={6}>
                     <Hint options={options}>
                     <input
                     name="companyName"
@@ -74,44 +75,68 @@ function AddApplication (props) {
                     required
                     />
                     </Hint>
+                    </Col>
+                    <Col xs={6} md={6}>
                     <input
                     name="jobTitle"
                     type="text"
                     placeholder="Position Applied For"
                     onChange={handleChange} 
                     />
+                    </Col>
+                </Row>
+                <Row className={styles.dateRow}>
+                    <Col xs={5} md={5}>
+                    <label>Date Applied: </label>
+                    </Col>
+                    <Col xs={7} md={7}>
                     <input
                     name="dateApplied"
                     type="date"
                     placeholder="Date Applied"
                     onChange={handleChange} 
                     />
+                    </Col>
+                </Row>
+                <Row className={styles.dateRow}>
+                    <Col xs={5} md={5}>
+                    <label>Date of Interview: </label>
+                    </Col>
+                    <Col xs={7} md={7}>
                     <input
                     name="interviewDate"
                     type="date"
-                    placeholder="Date of Interview"
+                    defaultValue="Date of Interview"
                     onChange={handleChange} 
                     />
-
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6} md={6}>
                     <input
                     name="contactName"
                     type="text"
                     placeholder="Name of Contact"
                     onChange={handleChange} 
                     />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6} md={6}>
                     <input
                     name="notes"
                     type="text"
                     placeholder="Notes"
                     onChange={handleChange} 
                     />
-
-
-                    <button>Submit</button>
-                </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Button onClick={handleSubmit} className={styles.button}>Submit</Button>
+                </Row>
 
             </form>
-        </div>
+        </Container>
     );
 }
 

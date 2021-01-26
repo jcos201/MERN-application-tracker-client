@@ -1,0 +1,53 @@
+input[type="date"] {
+    min-width: 175px;
+}
+
+.button {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    background-color: #659DBD;
+    text-align: center;
+    letter-spacing: .5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    transition: background-color .2s ease-out;
+}
+
+.formRow {
+    flex-direction: column;
+}
+
+.dateRow {
+    align-items: center;
+}
+
+@media only screen and (min-width: 600px) {
+    .form {
+        max-width: 800px;
+    }
+    input[type="text"] {
+        min-width: 450px;
+    }
+
+    .dateRow {
+        min-width: 450px;
+    }
+    
+  }
+
+@media only screen and (max-width: 599px) {
+
+    input[type="text"] {
+        min-width: 300px
+    }
+
+  }
+  
