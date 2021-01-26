@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import { getToken } from '../../../../services/tokenService';
 import ApplicationInfo from './ApplicationInfo';
 
-const BASE_URL = 'http://localhost:3001/users';
+// const BASE_URL = 'http://localhost:3001/users' Development URL
+const BASE_URL = 'https://react-job-search-app.herokuapp.com/users'
 
 function EditApplication(props) {
     let { id } = useParams();
@@ -21,9 +22,10 @@ function EditApplication(props) {
         fetch(BASE_URL + '/applications/' + id, requestOptions)
             .then(response => response.json())
             .then(data => setSingleListingData(data.listing))
-
         
     }, [id]);
+
+
     
     return singleListingData ? <ApplicationInfo {...props} preloadedData={singleListingData}/> : <div>Loading...</div>
 }
