@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { updateListing } from '../../../../../services/applicationService';
 
-import { Button, Container, Card, Col, Row } from 'react-bootstrap'
+import { Button, Container, Col, Row } from 'react-bootstrap'
 import styles from './ApplicationInfo.module.css'
 
 

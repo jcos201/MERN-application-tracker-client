@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 
-import { Accordion, Card} from 'react-bootstrap'
 import Button from 'react-bootstrap/Button';
 import styles from './SearchRow.module.css'
 import { Trash } from 'react-bootstrap-icons'

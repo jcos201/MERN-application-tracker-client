@@ -1,7 +1,8 @@
 import { updateUserApplications } from './userService'
 import { getToken } from './tokenService'
 
-const BASE_URL = 'http://localhost:3001/users';
+// const BASE_URL = 'http://localhost:3001/users' Development URL
+const BASE_URL = 'https://react-job-search-app.herokuapp.com/users'
 
 function addListing (applicationInfo) {
     return fetch(BASE_URL + '/addapplication', {

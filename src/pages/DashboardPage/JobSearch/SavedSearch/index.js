@@ -5,7 +5,8 @@ import { getToken } from '../../../../services/tokenService';
 import { Row, Container, Col, Button, Table } from 'react-bootstrap';
 import styles from './SavedSearch.module.css';
 
-const BASE_URL = 'http://localhost:3001/users';
+// const BASE_URL = 'http://localhost:3001/users' Development URL
+const BASE_URL = 'https://react-job-search-app.herokuapp.com/users'
 
 function SavedSearch(props) {
     let { id } = useParams();

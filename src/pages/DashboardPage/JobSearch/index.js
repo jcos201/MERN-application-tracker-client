@@ -4,10 +4,11 @@ import { addSearch } from '../../../services/jobSearchServices';
 import { getToken } from '../../../services/tokenService'
 import SearchRow from './SearchRow'
 
-import { Table, Row, Container, Col, Button } from 'react-bootstrap';
+import { Table, Row, Col, Button } from 'react-bootstrap';
 import styles from './JobSearch.module.css'
 
-const BASE_URL = 'http://localhost:3001/users';
+// const BASE_URL = 'http://localhost:3001/users' Development URL
+const BASE_URL = 'https://react-job-search-app.herokuapp.com/users'
 
 function JobSearchPage(props){
     const [formState, setFormState] = useState(getInitialFormState);

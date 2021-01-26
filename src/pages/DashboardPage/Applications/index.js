@@ -12,7 +12,8 @@ import { Button } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 
-const BASE_URL = 'http://localhost:3001/users';
+// const BASE_URL = 'http://localhost:3001/users' Development URL
+const BASE_URL = 'https://react-job-search-app.herokuapp.com/users'
 
 function ApplicationsPage (props) {
     const [applicationsState, setApplicationsState] = useState([]);

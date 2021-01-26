@@ -6,7 +6,8 @@ import {  Row, Button, Table } from 'react-bootstrap'
 import styles from './DeleteApplication.module.css'
 
 
-const BASE_URL = 'http://localhost:3001/users';
+// const BASE_URL = 'http://localhost:3001/users' Development URL
+const BASE_URL = 'https://react-job-search-app.herokuapp.com/users'
 
 function DeleteApplication(props) {
     let { id } = useParams();

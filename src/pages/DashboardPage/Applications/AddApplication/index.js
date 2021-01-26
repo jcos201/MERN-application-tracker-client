@@ -7,12 +7,11 @@ import styles from './AddApplication.module.css'
 import { addListing } from '../../../../services/applicationService';
 import { getToken } from '../../../../services/tokenService';
 
-const BASE_URL = 'http://localhost:3001/users';
+// const BASE_URL = 'http://localhost:3001/users' Development URL
+const BASE_URL = 'https://react-job-search-app.herokuapp.com/users'
 
 function AddApplication (props) {
     const [formState, setFormState] = useState(getInitialFormState);
-
-    const [startDate, setStartDate] = useState();
 
     const [options, setOptions] = useState([]);
     
