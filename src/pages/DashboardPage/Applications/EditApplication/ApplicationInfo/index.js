@@ -11,8 +11,6 @@ import styles from './ApplicationInfo.module.css'
 function ApplicationInfo(props) {
     let { id } = useParams();
     const listingData = props.preloadedData;
-    console.log('listing data')
-    console.log(listingData)
 
     const [formState, setFormState] = useState(getInitialFormState);
 
