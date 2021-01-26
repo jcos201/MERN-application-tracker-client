@@ -1,0 +1,40 @@
+.mainDiv {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+
+    color: #BC986A;
+}
+
+.text {
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.article {
+    display: flex;
+    justify-content: center;
+    min-height: 100px;
+    background-color: #659DBD;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 10px;
+}
+
+@media only screen and (min-width: 600px) {
+    .article{
+        max-width: 40% !important;
+        padding: 50px;
+    }
+}
+
+.rowCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 10px;
+}
