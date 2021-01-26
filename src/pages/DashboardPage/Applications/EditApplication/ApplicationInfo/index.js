@@ -3,6 +3,10 @@ import { useState } from 'react';
 
 import { updateListing } from '../../../../../services/applicationService';
 
+import { Button, Container, Card, Col, Row } from 'react-bootstrap'
+import styles from './ApplicationInfo.module.css'
+
+
 
 function ApplicationInfo(props) {
     let { id } = useParams();
@@ -79,9 +83,10 @@ function ApplicationInfo(props) {
     }
 
     return(
-        <div className="Page">
-            <form onSubmit={handleSubmit}>
-                <div>
+        <Container >
+            <form>
+                <Row>
+                    <Col xs={6} md={6}>
                     <input
                     name="companyName"
                     type="text"
@@ -90,6 +95,10 @@ function ApplicationInfo(props) {
                     onChange={handleChange} 
                     required
                     />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6} md={6}>
                     <input
                     name="jobTitle"
                     type="text"
@@ -97,6 +106,13 @@ function ApplicationInfo(props) {
                     value={formState.jobTitle}
                     onChange={handleChange} 
                     />
+                    </Col>
+                </Row>
+                <Row className={styles.dateRow}>
+                    <Col xs={5} md={5}>
+                    <label>Date Applied: </label>
+                    </Col>
+                    <Col xs={7} md={7}>
                     <input
                     name="dateApplied"
                     type="date"
@@ -104,6 +120,13 @@ function ApplicationInfo(props) {
                     value={formState.dateApplied}
                     onChange={handleChange} 
                     />
+                    </Col>
+                </Row>
+                <Row className={styles.dateRow}>
+                    <Col xs={5} md={5}>
+                    <label>Date of Interview: </label>
+                    </Col>
+                    <Col xs={7} md={7}>
                     <input
                     name="interviewDate"
                     type="date"
@@ -111,6 +134,10 @@ function ApplicationInfo(props) {
                     value={formState.interviewDate}
                     onChange={handleChange} 
                     />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6} md={6}>
                     <input
                     name="contactName"
                     type="text"
@@ -118,6 +145,10 @@ function ApplicationInfo(props) {
                     value={formState.contactName}
                     onChange={handleChange} 
                     />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6} md={6}>
                     <input
                     name="notes"
                     type="text"
@@ -125,12 +156,14 @@ function ApplicationInfo(props) {
                     value={formState.notes}
                     onChange={handleChange} 
                     />
-
-                    <button>Update</button>
-                </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Button onClick={handleSubmit} className={styles.button}>Update</Button>
+                </Row>
 
             </form>
-        </div>
+        </Container>
     );
 }
 
