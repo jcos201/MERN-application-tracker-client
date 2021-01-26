@@ -9,12 +9,11 @@ a {
 }
 
 .thCol {
-    max-width: 40%;
     padding: 2px;
 }
 
 .tdCol {
-    min-width: 60%;
+
     padding: 2px 5px;
 }
 
@@ -22,4 +21,22 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.textRow {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px
+}
+
+.searchBtn {
+    width: 90%
+}
+
+@media only screen and (max-width: 599px)  {
+    .searchBtn {
+        width: 300px;
+    }
 }

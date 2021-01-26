@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import { getToken } from '../../../../services/tokenService';
-import { Row, Container, Col, Button } from 'react-bootstrap';
+import { Row, Container, Col, Button, Table } from 'react-bootstrap';
 import styles from './SavedSearch.module.css';
 
 const BASE_URL = 'http://localhost:3001/users';
@@ -76,14 +76,14 @@ function SavedSearch(props) {
             <Row>
             <Link to="/jobsearch" className={styles.article}><Button>Return to all job search listings</Button></Link> 
             </Row>
+            <Row class={styles.textRow}>
+                Search Details:
+            </Row>
             <Row>
                 <Col xs={12} md={6} lg={6}>
                 
-        <table>
+        <Table>
             <tbody>
-                <tr>
-                    <th colSpan="2">Search Details</th>
-                </tr>
                 <tr>
                     <th className={styles.thCol}>Keyword:</th><td className={styles.tdCol}>{searchListing.jobKeyword}</td>
                 </tr>
@@ -94,13 +94,13 @@ function SavedSearch(props) {
                     <th className={styles.thCol}>State:</th><td className={styles.tdCol}>{searchListing.state1}</td>
                 </tr>
             </tbody>
-        </table>
+        </Table>
                 </Col>
                 <Col className={styles.searchCol} xs={6} md={6} lg={6}>
-        <a href={monsterURL} target="_blank" rel="noreferrer"><Button>Use this search on Monster.com</Button></a>
-        <a href={indeedURL} target="_blank" rel="noreferrer"><Button>Use this search on Indeed.com</Button></a>
-        <a href={cBuilderURL} target="_blank" rel="noreferrer"><Button>Use this search on CareerBuiler.com</Button></a>
-        <a href={museURL} target="_blank" rel="noreferrer"><Button>Use this search on Muse.com</Button></a>
+        <a href={monsterURL} target="_blank" rel="noreferrer"><Button className={styles.searchBtn}>Use this search on Monster.com</Button></a>
+        <a href={indeedURL} target="_blank" rel="noreferrer"><Button className={styles.searchBtn}>Use this search on Indeed.com</Button></a>
+        <a href={cBuilderURL} target="_blank" rel="noreferrer"><Button className={styles.searchBtn}>Use this search on CareerBuiler.com</Button></a>
+        <a href={museURL} target="_blank" rel="noreferrer"><Button className={styles.searchBtn}>Use this search on Muse.com</Button></a>
                 </Col>
             </Row>  
         </Container>

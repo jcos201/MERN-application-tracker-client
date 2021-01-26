@@ -4,6 +4,9 @@ import { addSearch } from '../../../services/jobSearchServices';
 import { getToken } from '../../../services/tokenService'
 import SearchRow from './SearchRow'
 
+import { Table, Row, Container, Col, Button } from 'react-bootstrap';
+import styles from './JobSearch.module.css'
+
 const BASE_URL = 'http://localhost:3001/users';
 
 function JobSearchPage(props){
@@ -66,10 +69,13 @@ function JobSearchPage(props){
 
     return(
         <>
-        <div>{props.user.firstName}'s Job Search Page</div>
-        <div className="Page">
+            <Row className={styles.pageItems}>
+            <div>{props.user.firstName}'s Job Search Page</div>
+            </Row>
+            <Col>
             <form onSubmit={handleSubmit}>
-                <div>
+                <Col>
+                
                     <input
                     name="jobKeyword"
                     type="text"
@@ -77,16 +83,21 @@ function JobSearchPage(props){
                     placeholder="Company, Position or Keyword"
                     onChange={handleChange} 
                     />
+                </Col>
+                <Col>
                     <input
                     name="city"
                     type="text"
                     placeholder="City"
                     onChange={handleChange} 
                     />
+                </Col>
+                <Col>
                     <select
                     name="state1"
                     value={formState.state1}
                     onChange={handleChange}
+                    className={styles.dropdown}
                     >
                         <option value="">State</option>
                         <option value="AL">Alabama</option>
@@ -141,32 +152,40 @@ function JobSearchPage(props){
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                     </select>
-                    <button>Save Job Search</button>
-                </div>
+                </Col>
+                <Col>
+                    <Button onClick={handleSubmit}>Save Job Search</Button>
+                </Col>
 
             </form>
-        </div>
+            </Col>
+        <Col>
+            <Row>
         {jobSearchState && jobSearchState.length > 0 ? 
-            <table>
+            <Table className={styles.searchTable}>
+                <thead>
+                    <tr><th>Keyword</th><th>City</th><th>State</th><th></th><th></th></tr>
+                </thead>
                 <tbody>
-                <tr><th>Keyword</th><th>City</th><th>State</th><th></th><th></th></tr>
                 {jobSearchState.map((listing, idx) => {
-                return (
-                <SearchRow
-                {...props}
-                jobKeyword={listing.jobKeyword}
-                city={listing.city}
-                state1={listing.state1}
-                searchId={listing._id}
-                key={idx}
-                handleDelete={handleDelete}
-                />
-                )
-        })}
+                    return (
+                        <SearchRow
+                        {...props}
+                        jobKeyword={listing.jobKeyword}
+                        city={listing.city}
+                        state1={listing.state1}
+                        searchId={listing._id}
+                        key={idx}
+                        handleDelete={handleDelete}
+                        />
+                        )
+                    })}
                 </tbody>
-            </table>
+            </Table>
         : 
         <p>Enter information for a search above and click on the save button</p>}
+            </Row>
+        </Col>
         </>
     );
 }

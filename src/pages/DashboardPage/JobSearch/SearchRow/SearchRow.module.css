@@ -1,0 +1,9 @@
+.btnEdit {
+    font-size: 0.875em !important;
+    margin-right: 5px;
+}
+.btnDanger {
+    font-size: 0.875em !important;;
+    background-color: #dc3545 !important;
+    border: 1px solid transparent !important;
+}
