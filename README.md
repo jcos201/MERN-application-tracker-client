@@ -22,7 +22,7 @@ This app can be used to track all the job applications submitted during a job se
 * Application / Job Search info will persist even after you've logged out
 
 ## Entity Relationship Diagram
-![ERD Screenshot - 1 User can have Many Applications](./public/Project3_ERD.png) 
+![ERD Screenshot - 1 User can have Many Applications](./public/Project3_ERD.jpg) 
 
 ## Wireframe
 ![Home Screen Wireframe](./public/homePage.png) 
