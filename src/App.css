@@ -1,41 +1,24 @@
-body.dark-mode {
-    --primary-color: #C5C6C7;
-    --header-bg-color: #0B0C10;
-    --primary-bg-color: #1F2833;
-    --nav-color: #45A29E;
-    --border-color: #66FCF1;
-}
 
-body {
-  --primary-color: #C5C6C7;
-  --header-bg-color: #659DBD;
-  --primary-bg-color: #FBEEC1;
-  --nav-color: #BC986A;
-  --border-color: #DAAD86;
-}
+
 
 main{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
+  max-height: 100vh;
+  
 }
 
 .App {
-  position: relative;
   min-height: 100vh;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
 }
 
-.App > footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-}
+
 
 .switch {
   position: absolute;

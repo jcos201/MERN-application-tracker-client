@@ -2,6 +2,10 @@ import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { getToken } from '../../../../services/tokenService'
 
+import {  Row, Button, Table } from 'react-bootstrap'
+import styles from './DeleteApplication.module.css'
+
+
 const BASE_URL = 'http://localhost:3001/users';
 
 function DeleteApplication(props) {
@@ -61,21 +65,23 @@ function formatDate(date, output) {
         <>
         { !!singleListingData ? 
         <>
-        <p>Are you sure you'd like to permanently delete the following application?</p>
-        <tbody>
-        <table>
+        <Row className={styles.rowText}>Are you sure you'd like to permanently delete the following application?</Row>
+        <Row className={styles.rowAlign}>
+        <Table striped bordered size="sm">
             <tr><th>Company Name</th><td>{singleListingData.companyName}</td></tr>
             <tr><th>Position</th><td>{singleListingData.jobTitle}</td></tr>
             <tr><th>Date Applied</th><td>{singleListingData.dateApplied ? formatDate(singleListingData.dateApplied) : ''}</td></tr>
             <tr><th>Interview Date</th><td>{singleListingData.interviewDate ? formatDate(singleListingData.interviewDate, 2) : ''}</td></tr>
             <tr><th>Contact Name</th><td>{singleListingData.contactName}</td></tr>
             <tr><th>Notes</th><td>{singleListingData.notes}</td></tr>
-        </table>
-        </tbody>
-        <div>
-            <Link to={"/applications"}><button>Cancel</button></Link>
-            <button onClick={handleSubmit}>Delete</button>
+        </Table>
+        </Row>
+        <Row className={styles.rowAlign}>
+        <div className={styles.divAlign}>
+            <Link to={"/applications"}><Button>Cancel</Button></Link>
+            <Button onClick={handleSubmit} className={styles.confirmBtn} class="btn-danger btn-sm">Confirm Application Deletion</Button>
         </div>
+        </Row>
         </>
         :
         <p>Loading...</p>

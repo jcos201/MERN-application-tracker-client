@@ -5,7 +5,7 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
 function Navigation(props){
     return (
-        <Navbar collapseOnSelect expand="lg">
+        <Navbar className={styles.navSize} collapseOnSelect expand="lg">
         { props.user?
         <Nav><Link to="/dashboard">{props.user.firstName}'s Application Tracker</Link></Nav>
         :

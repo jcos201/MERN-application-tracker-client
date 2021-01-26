@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { DatePicker } from 'react-datepicker';
 
 import { getToken } from '../../../services/tokenService';
 
@@ -10,7 +9,7 @@ import styles from './Applications.module.css'
 import { FileEarmarkPlus } from 'react-bootstrap-icons'
 
 import { Button } from 'react-bootstrap'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 
 const BASE_URL = 'http://localhost:3001/users';

@@ -3,27 +3,8 @@
     text-align: center !important;
 }
 
-.button {
-    text-decoration: none;
-    font-size: 14px;
-    color: white;
-    background-color: #659DBD;
-    text-align: center;
-    letter-spacing: .5px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    display: inline-block;
-    height: 36px;
-    line-height: 36px;
-    padding: 0 16px;
-    text-transform: uppercase;
-    vertical-align: middle;
-    transition: background-color .2s ease-out;
-}
 
 .accordionScroll {
-    overflow: scroll !important;
     display: flex;
     flex-direction: column;
 }

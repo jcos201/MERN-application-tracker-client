@@ -14,7 +14,7 @@ function addSearch (searchInfo) {
         body: JSON.stringify(searchInfo)
     }).then(response => {
         if(response.ok) return response.json();
-        throw new Error('Bad Data')
+        throw new Error('Something went wrong, please double check the data entered into Job Search form')
     }).then(data => data.jobSearchArray)
     
 }

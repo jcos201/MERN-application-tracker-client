@@ -90,7 +90,7 @@ function ApplicationInfo(props) {
                     <input
                     name="companyName"
                     type="text"
-                    placeholder="Company Name"
+                    placeholder="Update Company Name"
                     value={formState.companyName}
                     onChange={handleChange} 
                     required
@@ -102,7 +102,7 @@ function ApplicationInfo(props) {
                     <input
                     name="jobTitle"
                     type="text"
-                    placeholder="Position Applied For"
+                    placeholder="Update Position Applied For"
                     value={formState.jobTitle}
                     onChange={handleChange} 
                     />
@@ -116,7 +116,6 @@ function ApplicationInfo(props) {
                     <input
                     name="dateApplied"
                     type="date"
-                    placeholder="Date Applied"
                     value={formState.dateApplied}
                     onChange={handleChange} 
                     />
@@ -130,7 +129,6 @@ function ApplicationInfo(props) {
                     <input
                     name="interviewDate"
                     type="date"
-                    placeholder="Date of Interview"
                     value={formState.interviewDate}
                     onChange={handleChange} 
                     />
@@ -141,7 +139,7 @@ function ApplicationInfo(props) {
                     <input
                     name="contactName"
                     type="text"
-                    placeholder="Name of Contact"
+                    placeholder="Update Name of Contact"
                     value={formState.contactName}
                     onChange={handleChange} 
                     />
@@ -152,14 +150,14 @@ function ApplicationInfo(props) {
                     <input
                     name="notes"
                     type="text"
-                    placeholder="Notes"
+                    placeholder="Update Notes"
                     value={formState.notes}
                     onChange={handleChange} 
                     />
                     </Col>
                 </Row>
                 <Row>
-                    <Button onClick={handleSubmit} className={styles.button}>Update</Button>
+                    <Button onClick={handleSubmit} >Update</Button>
                 </Row>
 
             </form>

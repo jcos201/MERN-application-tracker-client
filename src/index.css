@@ -1,8 +1,63 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Texturina:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 
 body{
   margin: 0;
-  background-color: var(--primary-bg-color);
+  font-family: 'Texturina', serif !important;
+  background-color: var(--primary-bg-color) !important;
+}
+
+body.dark-mode {
+  --primary-color: #C5C6C7;
+  --header-bg-color: #0B0C10;
+  --primary-bg-color: #1F2833;
+  --nav-color: #45A29E;
+  --border-color: #66FCF1;
+}
+
+body {
+--primary-color: #C5C6C7;
+--header-bg-color: #659DBD;
+--primary-bg-color: #FBEEC1;
+--font-color: #BC986A;
+--border-color: #DAAD86;
+--tableHeader-color: rgba(101,157,189, 0.75);
+--tableRow-color: rgba(218,173,134, 0.75);
+color: var(--font-color) !important;
+
+}
+
+nav {
+  background-color: var(--header-bg-color);
+  width: 100vw !important;
+  font-family: 'Texturina', serif;
+  color: white;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  nav {
+    font-size: 30px;
+  }
+  #responsive-navbar-nav{
+    font-size: 20px;
+  }
+
+  input[type="text"] {
+    min-width: 450px;
+  }
+}
+
+@media only screen and (max-width: 599px)  {
+
+  input[type="text"] {
+    min-width: 300px
+  }
+
+  table {
+    max-width: 90% !important;
+  }
+  
 }
 
 Form {
@@ -14,6 +69,35 @@ Form {
 
 }
 
+table {
+  border: 3px solid var(--border-color) !important;
+  max-width: 75%;
+  color: white !important;
+}
+
+th {
+  background-color: var(--tableHeader-color) !important;
+  width: 40% !important;
+}
+
+td {
+  background-color: var(--tableRow-color) !important;
+  width: 60% !important;
+}
+
+button {
+  font-size: 1em !important;;
+  margin-right: 5px;
+  background-color: #659DBD !important;
+  border: 1px solid transparent !important;
+}
+
+
+
+.addScroll {
+  overflow: scroll;
+}
+
 Form > div {
   padding: 5px;
 }
@@ -22,21 +106,26 @@ Input {
   min-width: 250px;
   min-height: 30px;
   font-size: 16px;
-  color: #BC986A;
+  color: #BC986A !important;
 }
 
+input:-webkit-any(),
+input:-internal-autofill-selected,
+textarea:-webkit-any(),
+select:-webkit-any() {
+  color: #BC986A !important;
+}
+
+
+
 .formDiv {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  margin: 10%;
-  padding: 2% 2%;
   background-color: rgba(218, 173, 134, 0.4);
   border-style: solid;
   border-radius: 10px;
   border-color: #BC986A;
 }
+
+
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #BC986A !important;

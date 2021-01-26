@@ -9,6 +9,10 @@ a {
     text-align: right;
 }
 
+.navSize {
+    min-width: 100vw;
+}
+
 /*
 nav > ul {
 

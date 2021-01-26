@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { getUser, logout } from './services/userService';
 
-import Header from './components/Header';
 import Navigation from'./components/Navigation';
 import Footer from './components/Footer';
 
@@ -19,7 +18,10 @@ import JobSearchPage from './pages/DashboardPage/JobSearch';
 import SavedSearch from './pages/DashboardPage/JobSearch/SavedSearch'
 
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+
+import { Container, Row } from 'react-bootstrap'
 import './App.css';
+
 
 
 function App(props) {
@@ -45,14 +47,9 @@ function App(props) {
 
   return (
     <div className="App">
-      
-      <Header handleLogout={handleLogout} user={userState.user} />
       <Navigation handleLogout={handleLogout} user={userState.user} />
-      <div class="switch">
-      <img src="https://s.svgbox.net/hero-outline.svg?ic=sun&fill=FBEEC1" class="switch-sun" width="50px" height="50px" alt="Switch to light mode"></img>
-      <img src="https://s.svgbox.net/hero-outline.svg?ic=moon&fill=1f2833" class="switch-moon" width="50px" height="50px" alt="Switch to dark mode"></img>
-      </div>
-      <main><Switch>
+      <Container>
+        <Switch>
           <Route exact path="/" render={props =>
             <HomePage/>
           } />
@@ -107,8 +104,8 @@ function App(props) {
             user={userState.user}  /> 
           } />
 
-        </Switch></main>
-      <Footer/>
+        </Switch></Container>
+      <Footer />
     </div>
   );
 }

@@ -64,7 +64,7 @@ function AddApplication (props) {
     return(
         <Container className={styles.form}>
             <form >
-                <Row className={styles.formRow}>
+                <Row>
                     <Col xs={6} md={6}>
                     <Hint options={options}>
                     <input
@@ -76,6 +76,8 @@ function AddApplication (props) {
                     />
                     </Hint>
                     </Col>
+                </Row>
+                <Row>
                     <Col xs={6} md={6}>
                     <input
                     name="jobTitle"
