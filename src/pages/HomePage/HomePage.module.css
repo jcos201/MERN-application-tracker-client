@@ -1,0 +1,12 @@
+.div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    width: 75%;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    filter: drop-shadow(2px 8px 12px #5aa6ed);
+}

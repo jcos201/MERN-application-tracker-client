@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { signup } from '../../services/userService';
 
+import { Container, Col, Row, Button } from 'react-bootstrap'
+import styles from './Signup.module.css'
+
 function SignupPage (props) {
     const [formState, setFormState] = useState(getInitialFormState);
 
@@ -33,38 +36,52 @@ function SignupPage (props) {
         } catch (error) {
             alert(error.message);
         }
-        //console.log('submitted form data', formState)
-        //TODO: make ajax request to signup user
+
     }
     return(
-        <div className="Page">
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <input 
-                    value={formState.firstName} 
-                    onChange={handleChange} 
-                    name="firstName" 
-                    type="text" />
-                    <input 
-                    value={formState.lastName} 
-                    onChange={handleChange} 
-                    name="lastName" 
-                    type="text" />
-                    <input 
-                    value={formState.email} 
-                    onChange={handleChange} 
-                    name="email" 
-                    type="email" />
-                    <input 
-                    value={formState.password} 
-                    onChange={handleChange} 
-                    name="password" 
-                    type="password" />
-                    <button>Sign Up</button>
+        <Container>
+            <Row className={styles.formRow}>
+            <Col sm={1} md={1} lg={3}></Col>
+            <Col className="formDiv"  sm={3} md={6} lg={5}>
+            
+            <form className={styles.formBox}>
+                <div><input 
+                value={formState.firstName} 
+                onChange={handleChange} 
+                placeholder="First Name"
+                name="firstName" 
+                type="text"
+                required />
                 </div>
-
+                <div><input 
+                value={formState.lastName} 
+                onChange={handleChange} 
+                placeholder="Last Name"
+                name="lastName" 
+                type="text" />
+                </div>
+                <div><input 
+                value={formState.email} 
+                onChange={handleChange} 
+                placeholder="Email"
+                name="email" 
+                type="email"
+                required />
+                </div>
+                <div><input 
+                value={formState.password} 
+                onChange={handleChange} 
+                placeholder="Password"
+                name="password" 
+                type="password"
+                required />
+                </div>
+                <Button className={styles.button} onClick={handleSubmit}>Sign Up</Button>
             </form>
-        </div>
+        </Col>
+            <Col sm={1} md={1} lg={3}></Col>
+            </Row>
+        </Container>
     );
 
 }

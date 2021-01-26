@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { getUser, logout } from './services/userService';
 
-import Header from './components/Header';
+import Navigation from'./components/Navigation';
 import Footer from './components/Footer';
 
 import HomePage from './pages/HomePage';
@@ -18,6 +18,8 @@ import JobSearchPage from './pages/DashboardPage/JobSearch';
 import SavedSearch from './pages/DashboardPage/JobSearch/SavedSearch'
 
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+
+import { Container, Row } from 'react-bootstrap'
 import './App.css';
 
 
@@ -45,8 +47,9 @@ function App(props) {
 
   return (
     <div className="App">
-      <Header handleLogout={handleLogout} user={userState.user} />
-      <main><Switch>
+      <Navigation handleLogout={handleLogout} user={userState.user} />
+      <Container>
+        <Switch>
           <Route exact path="/" render={props =>
             <HomePage/>
           } />
@@ -100,8 +103,9 @@ function App(props) {
             {...props}
             user={userState.user}  /> 
           } />
-        </Switch></main>
-      <Footer/>
+
+        </Switch></Container>
+      <Footer />
     </div>
   );
 }

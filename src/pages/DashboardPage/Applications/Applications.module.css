@@ -1,0 +1,10 @@
+.text{
+    justify-content: center;
+    text-align: center !important;
+}
+
+
+.accordionScroll {
+    display: flex;
+    flex-direction: column;
+}

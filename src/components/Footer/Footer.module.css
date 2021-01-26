@@ -1,5 +1,15 @@
 .Footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    color:#BC986A;
+    font-size: small;
+    text-align: center;
+}
+
+.text {
+    position: relative;
+    margin: 0;
+    top: 10px;
+    bottom: 0;
 }

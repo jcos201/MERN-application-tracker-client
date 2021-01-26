@@ -1,0 +1,42 @@
+a {
+    padding: 7px;
+}
+
+.pageItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.thCol {
+    padding: 2px;
+}
+
+.tdCol {
+
+    padding: 2px 5px;
+}
+
+.searchCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.textRow {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px
+}
+
+.searchBtn {
+    width: 90%
+}
+
+@media only screen and (max-width: 599px)  {
+    .searchBtn {
+        width: 300px;
+    }
+}

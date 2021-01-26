@@ -1,0 +1,22 @@
+
+
+input[type="date"] {
+    min-width: 175px;
+}
+
+.dateRow {
+    align-items: center;
+}
+
+@media only screen and (min-width: 600px) {
+    .form {
+        max-width: 800px;
+    }
+
+    .dateRow {
+        min-width: 450px;
+    }
+    
+  }
+
+  

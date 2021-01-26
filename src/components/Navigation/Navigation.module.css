@@ -1,0 +1,39 @@
+a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.navItems {
+    display: flex !important;
+    align-items: flex-end !important;
+    text-align: right;
+}
+
+.navSize {
+    min-width: 100vw;
+}
+
+/*
+nav > ul {
+
+    align-items: center;
+    background-color: var(--nav-color) !important;
+    margin: 0 !important;
+    list-style: none !important;
+    padding: .5% !important;
+
+}
+
+nav > ul li {
+    margin-right: 20px;
+    font-size: 1.5rem;
+}
+
+nav > ul a {
+    font-size: 2rem !important;
+    align-self: auto;
+    color: white;
+    text-decoration: none !important;
+}
+
+*/

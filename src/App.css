@@ -1,9 +1,56 @@
-.App {
-  min-height: 100vh;
+
+
+
+main{
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-height: 100vh;
+  
 }
 
-.App main {
-  flex-grow: 1;
+.App {
+  min-height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
 }
+
+
+
+.switch {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.switch-sun .switch-moon {
+  font-size: 3rem;
+  color: #f6ad55;
+  cursor: pointer
+}
+
+/*
+main {
+  min-height: 100vh;
+  padding: 15px;
+}
+display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 4fr;
+    grid-gap: 15px;
+
+.App {
+  min-height: 100vh;
+}
+
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/2;
+}
+*/

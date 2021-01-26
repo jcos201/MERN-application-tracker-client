@@ -1,0 +1,24 @@
+.pageItems {
+    justify-content: center;
+}
+
+.dropdown {
+    min-height: 30px;
+    color: #BC986A;
+}
+
+.btnEdit {
+    margin-right: 5px;
+}
+.btnDanger {
+    background-color: #dc3545 !important;
+    border: 1px solid transparent;
+}
+
+.addScroll {
+    overflow: scroll;
+}
+
+.searchTable {
+    max-width: 85% !important;
+}

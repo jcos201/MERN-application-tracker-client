@@ -1,8 +1,16 @@
-import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { getToken } from '../../../services/tokenService'
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
-import ApplicationRow from './ApplicationRow'
+import { getToken } from '../../../services/tokenService';
+
+import ApplicationRow from './ApplicationRow';
+
+import styles from './Applications.module.css'
+import { FileEarmarkPlus } from 'react-bootstrap-icons'
+
+import { Button } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const BASE_URL = 'http://localhost:3001/users';
 
@@ -17,30 +25,19 @@ function ApplicationsPage (props) {
         }
         fetch(BASE_URL + '/applications', requestOptions)
             .then(response => response.json())
-            .then(data => setApplicationsState(data.applicationArray))
-        
+            .then(data => setApplicationsState(data.applicationArray))        
     }, [])    
 
 
 
     return (
         <>
-        <Link to="/addApplication"><button>Add Application</button></Link>
-        <div>{props.user.firstName}'s Job Applications Page</div>
+        <Row className={styles.text}>{props.user.firstName}'s Job Applications Page</Row>
+        <Row><Link to="/addApplication"><Button className={styles.button} class="btn"><FileEarmarkPlus/> Add Application</Button></Link></Row>
+        <Row  className={styles.accordionScroll}>
         {applicationsState && applicationsState.length > 0 ? 
-        <table>
-            <tbody>
-        <tr>
-            <th>Company Name</th>
-            <th>Position</th>
-            <th>Date Applied</th>
-            <th>Interview Date</th>
-            <th>Contact Name</th>
-            <th>Notes</th>
-            <th></th>
-            <th></th>
-            </tr>
-        {applicationsState.map((listing, idx) => {
+        applicationsState.map((listing, idx) => {
+            console.log(listing.dateApplied)
             return (<ApplicationRow 
                 {...props}
                 companyName={listing.companyName}
@@ -52,12 +49,10 @@ function ApplicationsPage (props) {
                 appId={listing._id}
                 key={idx}
                 />)
-        })}
-        
-        </tbody>        
-        </table>
+        })
             :
         <p>There are no applications here</p>}
+        </Row>
         </>
     )
 }

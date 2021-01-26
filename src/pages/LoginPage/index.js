@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { login } from '../../services/userService'
 
+import styles from './Login.module.css'
+import { Container, Col, Row, Button } from 'react-bootstrap'
+
 function LoginPage (props) {
     const [formState, setFormState] = useState(getInitialFormState);
 
@@ -31,28 +34,41 @@ function LoginPage (props) {
         } catch (error) {
             alert(error.message);
         }
-        //console.log('submitted form data', formState)
-        //TODO: make ajax request to signup user
     }
     return(
-        <div className="Page">
-            <form onSubmit={handleSubmit}>
+        <Container >
+            <Row className={styles.formRow}>
+            <Col sm={1} md={1} lg={3}></Col>
+            <Col className="formDiv"  sm={3} md={6} lg={5}>
+            <form>
                 <div>
                     <input 
                     value={formState.email} 
-                    onChange={handleChange} 
+                    onChange={handleChange}
+                    placeholder="Email" 
                     name="email" 
-                    type="email" />
+                    type="email"
+                    required />
+                </div>
+                <div>
                     <input 
                     value={formState.password} 
                     onChange={handleChange} 
+                    placeholder="Password"
                     name="password" 
-                    type="password" />
-                    <button>Login</button>
+                    type="password"
+                    required />
+                    <br/>
+                </div>
+                <div>
+                    <Button className={styles.button} onClick={handleSubmit}>Login</Button>
                 </div>
 
             </form>
-        </div>
+            </Col>
+            <Col sm={1} md={1} lg={3}></Col>
+            </Row>
+        </Container>
     );
 
 }
