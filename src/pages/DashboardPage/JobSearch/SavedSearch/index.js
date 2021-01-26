@@ -25,7 +25,7 @@ function SavedSearch(props) {
             .then(response => response.json())
             .then(data => setSearchListing(data.searchListing));
         
-    }, []);
+    }, [id]);
 
     let monKeyword = "q=";
     let monCity = "";

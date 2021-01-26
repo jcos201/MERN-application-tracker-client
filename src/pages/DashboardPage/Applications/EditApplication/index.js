@@ -12,9 +12,7 @@ function EditApplication(props) {
     const [singleListingData, setSingleListingData] = useState(null);
 
         
-    useEffect(() => {
-        console.log('inside useEffect')
-        
+    useEffect(() => {        
         const requestOptions = {
             headers: { 
                 'Content-Type': 'Application/json',
@@ -24,11 +22,8 @@ function EditApplication(props) {
             .then(response => response.json())
             .then(data => setSingleListingData(data.listing))
 
-        console.log('setListingdata')
-        console.log(singleListingData);
-            //(data => setApplicationsState(data.applicationArray))
         
-    }, []);
+    }, [id]);
     
     return singleListingData ? <ApplicationInfo {...props} preloadedData={singleListingData}/> : <div>Loading...</div>
 }

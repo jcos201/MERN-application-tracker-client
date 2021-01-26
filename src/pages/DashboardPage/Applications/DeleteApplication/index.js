@@ -15,8 +15,7 @@ function DeleteApplication(props) {
     const [singleListingData, setSingleListingData] = useState([]);
 
     useEffect(() => {
-        console.log('inside delete option useEffect');
-
+        
         const requestOptions = {
             headers: { 
                 'Content-Type': 'Application/json',
@@ -26,7 +25,7 @@ function DeleteApplication(props) {
             .then(response => response.json())
             .then(data => setSingleListingData(data.listing))
         
-        }, []);
+        }, [id]);
         
 function formatDate(date, output) {
     var week = ['Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']

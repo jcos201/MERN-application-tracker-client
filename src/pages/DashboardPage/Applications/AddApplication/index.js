@@ -43,7 +43,7 @@ function AddApplication (props) {
             .then(response => response.json())
             .then(data => setOptions(data));
 
-        console.log(options)
+        //console.log(options)
         
     }, [])
 
