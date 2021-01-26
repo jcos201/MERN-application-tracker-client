@@ -29,7 +29,7 @@ This app can be used to track all the job applications submitted during a job se
 
 ![User Dashboard Wireframe](./public/dashboard.png) 
 
-![Application Listings Screen Wireframe](./public/allApplications.png) 
+![Application Listings Screen Wireframe](./public/allapplications.png) 
 
 ![Application Add / Edit Screen Wireframe](./public/AddEditApplications.png) 
 
