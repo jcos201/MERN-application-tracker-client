@@ -1,0 +1,14 @@
+
+
+.accordionScroll {
+    overflow: scroll;
+}
+
+
+.btnEdit {
+    margin-right: 5px ;
+}
+
+.btnDanger {
+    background-color: #dc3545 !important;
+}
