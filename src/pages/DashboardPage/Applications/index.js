@@ -6,6 +6,13 @@ import { getToken } from '../../../services/tokenService';
 
 import ApplicationRow from './ApplicationRow';
 
+import styles from './Applications.module.css'
+import { FileEarmarkPlus } from 'react-bootstrap-icons'
+
+import { Button } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.css'
+
 const BASE_URL = 'http://localhost:3001/users';
 
 function ApplicationsPage (props) {
@@ -26,23 +33,11 @@ function ApplicationsPage (props) {
 
     return (
         <>
-        <Link to="/addApplication"><button>Add Application</button></Link>
-        <div>{props.user.firstName}'s Job Applications Page</div>
+        <Row className={styles.text}>{props.user.firstName}'s Job Applications Page</Row>
+        <Row><Link to="/addApplication"><Button className={styles.button} class="btn"><FileEarmarkPlus/> Add Application</Button></Link></Row>
+        <Row  className={styles.accordionScroll}>
         {applicationsState && applicationsState.length > 0 ? 
-        <table>
-            <tbody>
-        <tr>
-            <th>Company Name</th>
-            <th>Position</th>
-            <th>Date Applied</th>
-            <th>Interview Date</th>
-            <th>Contact Name</th>
-            <th>Notes</th>
-            <th></th>
-            <th></th>
-
-            </tr>
-        {applicationsState.map((listing, idx) => {
+        applicationsState.map((listing, idx) => {
             console.log(listing.dateApplied)
             return (<ApplicationRow 
                 {...props}
@@ -55,12 +50,10 @@ function ApplicationsPage (props) {
                 appId={listing._id}
                 key={idx}
                 />)
-        })}
-        
-        </tbody>        
-        </table>
+        })
             :
         <p>There are no applications here</p>}
+        </Row>
         </>
     )
 }
