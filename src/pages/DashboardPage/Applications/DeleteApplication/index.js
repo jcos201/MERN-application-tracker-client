@@ -47,10 +47,10 @@ function formatDate(date, output) {
 }
 
 
-    console.log(id);
+    //console.log(id);
 
     function handleSubmit() {
-        console.log('will handle deletion');
+        //console.log('will handle deletion');
         const requestOptions = {
             method: "DELETE",
             headers: {
