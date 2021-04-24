@@ -4,6 +4,11 @@
      justify-content: center;
  }
 
+ input[type=email], input[type=password] {
+    min-width: 300px;
+}
+
+
  @media only screen and (min-width: 600px) {
     .formBox {
         margin: 12px 0;
@@ -12,6 +17,10 @@
 
     .formDiv {
         padding: 10px 3px !important;
+    }
+
+    input[type=email], input[type=password] {
+        min-width: 450px;
     }
   }
 
@@ -33,26 +42,4 @@
     transition: background-color .2s ease-out;
     margin-bottom: 10px;
 }
- 
- /*
 
-
-.button {
-    text-decoration: none;
-    font-size: 14px;
-    color: white;
-    background-color: #659DBD;
-    text-align: center;
-    letter-spacing: .5px;
-    cursor: pointer;
-    border: none;
-    border-radius: 2px;
-    display: inline-block;
-    height: 36px;
-    line-height: 36px;
-    padding: 0 16px;
-    text-transform: uppercase;
-    vertical-align: middle;
-    transition: background-color .2s ease-out;
-}
-*/
