@@ -1,12 +1,92 @@
-.div{
+/*
+CSS styling using mobile-first design
+*/
+
+.h4Col{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    color: var(--header-bg-color);
+    font-size: 1.4rem;
+    text-align: left;
+    margin: 0 5px;
+}
+
+h3{
+    font-size: 1.35rem !important;
+    margin: 0 5px 10px 5px;
+}
+
+.row {
+    justify-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.text {
+    text-align: center;
+
+}
+
+.rowTextCenter {
+    flex-direction: row;
+}
+
+.div{
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    text-align: center;
 }
 
 .img {
-    width: 75%;
+    width: 95%;
     margin-top: 5%;
     margin-bottom: 7%;
     filter: drop-shadow(2px 8px 12px #5aa6ed);
+}
+
+/*
+Styling specific to small devices
+*/
+@media only screen and (min-width: 576px)  {
+
+    .h4Col{
+        font-size: 0.97rem;
+        margin: 0;
+    }
+
+    .animatedText{
+        padding-bottom: 10px;
+    }
+
+    .animatedText:nth-child(1){
+        padding-top: 10px;
+    }
+}
+
+/*
+Styling specific to medium screens like tablets
+*/
+@media only screen and (min-width: 768px)  {
+
+    .h4Col{
+        font-size: 1.25rem;
+    }
+
+}
+
+/*
+Styling specific to Large screens and above
+*/
+@media only screen and (min-width: 992px)  {
+
+    h3{
+        font-size: 1.95rem !important;
+    }
+
+    .h4Col{
+        font-size: 1.75rem;
+    }
+
 }
