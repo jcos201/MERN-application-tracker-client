@@ -7,14 +7,17 @@ import Fade from 'react-reveal/Fade'
 function HomePage (props) {
     return(
         <>
+        {/* Homepage Blurb */}
         <Row className={styles.row}><h3>An online resource to help with your job search.</h3></Row>
         <Col className={styles.text}>
             <Row>
+                {/* Homepage logo image */}
                 <Col sm={ {span:7, order:'first' }} xs={{ span:18, order: 'last' }}>
                     <Fade duration={3000}>
                     <img src={logo} className={styles.img} alt="Search Jobs, save your searches and track applications you've submitted."/>
                     </Fade>
                 </Col>
+                {/* Homepage Animated Copy */}
                 <Col sm={{ span:5, order:'last' }} xs={{ span:18, order: 'first' }} className={styles.h4Col}> 
                     <Fade delay={1000} right cascade duration={1500}>
                         <Row className={styles.animatedText}>Search Jobs.</Row>
