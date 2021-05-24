@@ -6,6 +6,10 @@ import styles from './Signup.module.css'
 
 function SignupPage (props) {
     const [formState, setFormState] = useState(getInitialFormState);
+    /*
+    Consider adding spinner by adding loading state and setting to false once
+    user hits submit button
+    */
 
     function getInitialFormState() {
         return {
@@ -32,7 +36,7 @@ function SignupPage (props) {
     Try / Catch will test for errors in input fields.
         - If error alert user to error
         - If successful:
-            - Await signup function from services.js to execute to create new user and token
+            - Await signup function from services.js to execute in order to create new user and token
             - Clear signup form
             - handlSignupOrLogin function will get newly created user and set user state to newly created user
                 this will allow user's application and job search entries to be saved to this specific user
