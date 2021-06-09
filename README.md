@@ -22,22 +22,15 @@ This app can be used to track all the job applications submitted during a job se
 * Application / Job Search info will persist even after you've logged out
 
 ## Entity Relationship Diagram
-<<<<<<< HEAD
-![ERD Screenshot - 1 User can have Many Applications](./public/Project3_ERD.png) 
-=======
 ![ERD Screenshot - 1 User can have Many Applications](./public/Project3_ERD.jpg) 
->>>>>>> 877513afb8701ed73d3974c4887b34e82187ccdb
 
 ## Wireframe
 ![Home Screen Wireframe](./public/homePage.png) 
 
 ![User Dashboard Wireframe](./public/dashboard.png) 
 
-<<<<<<< HEAD
-![Application Listings Screen Wireframe](./public/allApplications.png) 
-=======
+
 ![Application Listings Screen Wireframe](./public/allapplications.png) 
->>>>>>> 877513afb8701ed73d3974c4887b34e82187ccdb
 
 ![Application Add / Edit Screen Wireframe](./public/AddEditApplications.png) 
 
@@ -61,8 +54,5 @@ Click [here](https://mern-job-search-tracker.netlify.app/) to get started.
 
 ## Future Enhancements
 - [] Allow job search functionality without loggin in
-<<<<<<< HEAD
 - [] Add functionality for creating and storing resumes
-=======
-- [] Add functionality for creating and storing resumes
->>>>>>> 877513afb8701ed73d3974c4887b34e82187ccdb
+
