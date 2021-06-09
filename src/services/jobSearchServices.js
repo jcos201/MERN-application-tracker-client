@@ -4,8 +4,7 @@ const BASE_URL = 'https://react-job-search-app.herokuapp.com/users'
 
 
 function addSearch (searchInfo) {
-    console.log('inside of addSearch');
-    console.log(searchInfo)
+
     return fetch(BASE_URL + '/addSearch', {
         method: 'POST',
         headers: {
