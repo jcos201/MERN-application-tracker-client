@@ -1,7 +1,11 @@
+// Import hooks we're using in this component
 import { useState, useEffect } from 'react';
+// Import addSearch function from services folder
 import { addSearch } from '../../../services/jobSearchServices';
 
+// Import user's unique token (which was stored in local memory) using the getToken function in services folder
 import { getToken } from '../../../services/tokenService'
+// Import controlled component SearchRow
 import SearchRow from './SearchRow'
 
 import { Table, Row, Col, Button } from 'react-bootstrap';
@@ -11,6 +15,14 @@ import styles from './JobSearch.module.css'
 const BASE_URL = 'https://react-job-search-app.herokuapp.com/users'
 
 function JobSearchPage(props){
+/*
+Because this component renders both a Job Search Form and also User's saved Job Searches the useState hook is used twice
+- The first useState sets the Form state to blank before component is mounted
+    * The form's state will be updated on keydown using the handleChange function
+
+- The second useState initializes the JobSearch state to an empty array before component is mounted
+    * JobSearch state will then be updated after component is mounted using the useEffect Hook
+*/
     const [formState, setFormState] = useState(getInitialFormState);
 
     const [jobSearchState, setJobSearchState] = useState([]);
@@ -30,10 +42,7 @@ function JobSearchPage(props){
         }
         fetch(BASE_URL + '/savedsearches', requestOptions)
             .then(response => response.json())
-            .then(data => setJobSearchState(data.jobSearchArray));
-
-        //console.log(jobSearchState)
-        
+            .then(data => setJobSearchState(data.jobSearchArray));        
     }, [])
 
     function handleChange (event) {
@@ -55,8 +64,6 @@ function JobSearchPage(props){
     }
 
     async function handleDelete (searchId) {
-        //console.log('delete requested')
-
         const requestOptions = {
             method: "DELETE",
             headers: {
