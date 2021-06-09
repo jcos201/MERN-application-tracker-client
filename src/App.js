@@ -1,19 +1,27 @@
 import { useState } from 'react';
+/*
+Functions imported from usersService to deal with setting User State
+*/
 import { getUser, logout } from './services/userService';
 
 import Navigation from'./components/Navigation';
 import Footer from './components/Footer';
 
+// Site pages
 import HomePage from './pages/HomePage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
+
+// User Dashboard (default homepage after sign-in)
 import DashboardPage from './pages/DashboardPage';
 
+// User Job Application Components
 import ApplicationsPage from './pages/DashboardPage/Applications';
 import AddApplication from './pages/DashboardPage/Applications/AddApplication';
 import EditApplication from './pages/DashboardPage/Applications/EditApplication';
 import DeleteApplication from './pages/DashboardPage/Applications/DeleteApplication'
 
+// User Job Search Components
 import JobSearchPage from './pages/DashboardPage/JobSearch';
 import SavedSearch from './pages/DashboardPage/JobSearch/SavedSearch'
 
