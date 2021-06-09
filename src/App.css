@@ -32,25 +32,3 @@ main{
   cursor: pointer
 }
 
-/*
-main {
-  min-height: 100vh;
-  padding: 15px;
-}
-display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 4fr;
-    grid-gap: 15px;
-
-.App {
-  min-height: 100vh;
-}
-
-
-.home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-column: 1/2;
-}
-*/
