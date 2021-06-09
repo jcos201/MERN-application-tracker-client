@@ -34,17 +34,3 @@ function Navigation(props){
 }
 
 export default Navigation;
-
-/*
-
-    <header className={styles.Header}>
-
-    </header>
-
-        <nav>
-        <ul>
-
-        </ul>
-    </nav>
-
-    */
